@@ -1,0 +1,92 @@
+import Head from 'next/head'
+import { getSortedPostsData } from '../lib/posts'
+import styles from '../styles/Home.module.css'
+import Link from 'next/link'
+import { GetStaticProps } from 'next'
+import Date from '../components/date'
+
+interface PostsData {
+  date: string,
+  title: string,
+  id: string
+}
+
+interface Props {
+  postsData: PostsData[]
+}
+
+const downArrow = (
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className={styles.downArrow} viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+</svg>
+)
+
+export const Home: React.FC<Props> = ({ postsData }) => {
+  return (
+    <div>
+      <Head>
+        <title>Camden Mecklem</title>
+        <meta name="description" content="Camden Mecklem's personal website" />
+        <link rel="icon" href="/favicon.ico" />
+
+        {/* Preload the font */}
+        {/* <link
+            rel="preload"
+            href="/fonts/Inter/Inter-Variable.ttf"
+            as="font"
+            crossOrigin=""
+          /> */}
+
+      </Head>
+
+      <video className={styles.video} preload="auto" autoPlay muted loop id="bgvid">
+        <source src="/vid/space.mp4" type="video/mp4" />
+      </video>
+
+      <main className={`${styles.containerWithBgVideo} ${styles.container}`}>
+
+        <h1 className={styles.title}>
+          My name is Camden.
+        </h1>
+
+        <ul className={styles.nav}>
+          <li id={styles.blogNav}><span>Blog</span></li>
+          <li id={styles.portfolioNav}><span>Portfolio</span></li>
+        </ul>
+
+        {downArrow}
+
+        {/* <section>
+          {postsData.map(({ id, date, title }) => (
+            <div key={id}>
+            <p>
+              <Link key={id} href={`/posts/${id}`}>
+                <a>{title}</a>
+              </Link>
+              &#x25CF;
+              <small>
+                <Date dateString={date} />
+              </small>
+            </p>
+            </div>
+          ))}
+      </section> */}
+      </main>
+
+      <footer className={styles.footer}>
+        &copy; 2021 Camden Mecklem
+      </footer>
+    </div>
+  )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const postsData = getSortedPostsData()
+  return {
+    props: {
+      postsData
+    }
+  }
+}
+
+export default Home 
