@@ -1,0 +1,39 @@
+.portfolioDisplay {
+  display: flex;
+  list-style-type: none;
+  gap: 10vh;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 0;
+}
+
+.portfolioImage {
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+  border: solid 4px #e9e9e9;
+  transition: 0.2s;
+}
+
+.portfolioItem {
+  display: flex;
+  flex-flow: column;
+  justify-self: center;
+  margin: 0 auto;
+}
+
+.portfolioImage:hover, a:focus .portfolioImage {
+  filter: brightness(0.7);
+}
+
+#groupreadImage:hover, a:focus #groupreadImage {
+  border-color: #9CC698;
+}
+
+#linearaImage:hover, a:focus #linearaImage {
+  border-color: #FBAB81;
+}
+
+#kautharImage:hover, a:focus #kautharImage {
+  border-color: #A3BDD4;
+}

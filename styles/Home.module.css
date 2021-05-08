@@ -13,21 +13,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   text-align: center;
+  color: #e9e9e9;
 }
 
 .containerWithBgVideo {
   position: relative;
-  color: #e9e9e9;
   font-size: 1.5vh;
 }
 
 .video {
-  object-fit: cover;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
+  object-fit: fill;
+  width: 100%;
+  height: 100%;
+  position: absolute;
   top: 0;
   left: 0;
 }
@@ -76,6 +75,36 @@
 .title {
   font-size: 5em;
   font-family: "Inter";
+}
+
+.subtitle {
+  font-size: 2em;
+  font-family: "Inter";
+}
+
+.sidebar {
+  position: absolute;
+  width: 25vw;
+  margin-right: 70vw;
+  height: 100vh;
+  display: inline;
+}
+
+#blogContainer {
+  background-color: #e9e9e9;
+  justify-content: left;
+}
+
+.postList {
+  /* margin-top: 10vh; */
+}
+
+#blogContainer * {
+  color: black;
+}
+
+#blogImg {
+  height: 20vw;
 }
 
 .downArrow {
