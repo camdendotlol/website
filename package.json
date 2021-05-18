@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next export",
+    "build:ghp": "rm -r docs && next build && next export && mv out docs"
   },
   "dependencies": {
     "date-fns": "^2.21.1",
