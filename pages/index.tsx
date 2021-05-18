@@ -29,81 +29,55 @@ export const Home: React.FC<Props> = ({ postsData }) => {
         <title>Camden Mecklem</title>
         <meta name="description" content="Camden Mecklem's personal website" />
         <link rel="icon" href="/favicon.ico" />
-
-        {/* Preload the font */}
-        {/* <link
-            rel="preload"
-            href="/fonts/Inter/Inter-Variable.ttf"
-            as="font"
-            crossOrigin=""
-          /> */}
-
       </Head>
-
       <video className={styles.video} preload="auto" autoPlay muted loop id="bgvid">
         <source src="/vid/space.mp4" type="video/mp4" />
       </video>
-
       <main>
-
-      <div className={`${styles.containerWithBgVideo} ${styles.container}`}>
-
-        <h1 className={styles.title}>
-          My name is Camden.
-        </h1>
-
-        <ul className={styles.nav}>
-          <li id={styles.portfolioNav}><span>Portfolio</span></li>
-          <li id={styles.blogNav}><span>Blog</span></li>
-        </ul>
-
-        {downArrow}
-
-
-      </div>
-
-      <div className={styles.container}>
-        <h1 className={styles.title}>
-          I create websites.
-        </h1>
-
-        <Portfolio />
-      </div>
-
-      <div className={styles.container} id={styles.blogContainer}>
-        <div className={styles.sidebar}>
+        <div className={`${styles.containerWithBgVideo} ${styles.container}`}>
           <h1 className={styles.title}>
-            I also write a blog.
+            My name is Camden.
           </h1>
-          <img id={styles.blogImg} src="/img/alexandria.jpg" alt="" />
+          <ul className={styles.nav}>
+            <li id={styles.portfolioNav}><span>Portfolio</span></li>
+            <li id={styles.blogNav}><span>Blog</span></li>
+          </ul>
+          {downArrow}
         </div>
-
-        <div className={styles.postList}>
-          <h1 className={styles.subtitle}>
-            Here are some recent posts:
+        <div className={styles.container}>
+          <h1 className={styles.title}>
+            I create websites.
           </h1>
-          
-          <section>
-            {postsData.map(({ id, date, title }) => (
-              <div key={id}>
-              <h3>
-                <Link key={id} href={`/posts/${id}`}>
-                  <a>{title}</a>
-                </Link>
-              </h3>
-              <small>
-                <Date dateString={date} />
-              </small>
-              </div>
-            ))}
-          </section>
-
+          <Portfolio />
         </div>
-
-      </div>
-
+        <div className={styles.container} id={styles.blogContainer}>
+          <div className={styles.sidebar}>
+            <h1 className={styles.title}>
+              I also write a blog.
+            </h1>
+            <img id={styles.blogImg} src="/img/alexandria.jpg" alt="" />
+          </div>
+          <div className={styles.postList}>
+            <h1 className={styles.subtitle}>
+              Here are some recent posts:
+            </h1>
+            <section>
+              {postsData.map(({ id, date, title }) => (
+                <div key={id}>
+                <h3>
+                  <Link key={id} href={`/posts/${id}`}>
+                    <a>{title}</a>
+                  </Link>
+                </h3>
+                <small>
+                  <Date dateString={date} />
+                </small>
+                </div>
+              ))}
+            </section>
+          </div>
+        </div>
       </main>
-
       <footer className={styles.footer}>
         &copy; 2021 Camden Mecklem
       </footer>
