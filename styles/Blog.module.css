@@ -1,0 +1,34 @@
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter/Inter-Variable.ttf");
+  font-style: normal;
+  font-weight: 900;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 60%;
+  text-align: center;
+}
+
+.title {
+  font-size: 5em;
+  font-family: "Inter";
+}
+
+.subtitle {
+  font-size: 3em;
+  font-family: "Inter";
+}
+
+@media screen and (max-width: 1400px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    max-width: 100%;
+  }
+}

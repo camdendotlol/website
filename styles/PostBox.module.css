@@ -1,0 +1,51 @@
+.postbox {
+  width: 40vw;
+  height: 25vw;
+  margin: 0 auto;
+  border: 3px solid black;
+  margin-bottom: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  transition: 0.23s;
+}
+
+.postbox:hover {
+  cursor: pointer;
+  color: #000000;
+  border: 3px solid #E37893;
+}
+
+.postbox:hover .postboxContent {
+  color: #E37893;
+}
+
+.postboxContent {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 1.5em;
+  width: 100%;
+  padding: 2vw;
+  transition: 0.23s;
+}
+
+@media screen and (max-width: 1400px) {
+  .postbox {
+    width: 60vw;
+    height: 40vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .postbox {
+    width: 90vw;
+    height: 60vw;
+    padding: 0;
+  }
+
+  .postboxContent {
+    font-size: 1.3em;
+  }
+}

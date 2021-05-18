@@ -25,6 +25,11 @@ const downArrow = (
 export const Home: React.FC<Props> = ({ postsData }) => {
   return (
     <div>
+      <style jsx global>{`
+        body {
+          background-color: #000000;
+        }
+      `}</style>
       <Head>
         <title>Camden Mecklem</title>
         <meta name="description" content="Camden Mecklem's personal website" />
@@ -51,21 +56,20 @@ export const Home: React.FC<Props> = ({ postsData }) => {
           <Portfolio />
         </div>
         <div className={styles.container} id={styles.blogContainer}>
-          <div className={styles.sidebar}>
-            <h1 className={styles.title}>
-              I also write a blog.
-            </h1>
-            <img id={styles.blogImg} src="/img/alexandria.jpg" alt="" />
-          </div>
+          <h1 className={styles.blogHeader}>
+            I also write a blog.
+          </h1>
+          <img id={styles.blogImg} src="/img/alexandria.jpg" alt="" />
           <div className={styles.postList}>
             <h1 className={styles.subtitle}>
               Here are some recent posts:
             </h1>
             <section>
-              {postsData.map(({ id, date, title }) => (
+              {/* Only fetch the most recent couple posts for the homepage */}
+              {postsData.slice(0, 2).map(({ id, date, title }) => (
                 <div key={id}>
                 <h3>
-                  <Link key={id} href={`/posts/${id}`}>
+                  <Link key={id} href={`/blog/${id}`}>
                     <a>{title}</a>
                   </Link>
                 </h3>
@@ -75,6 +79,9 @@ export const Home: React.FC<Props> = ({ postsData }) => {
                 </div>
               ))}
             </section>
+            <Link href={'/blog/'}>
+              <a className={styles.blogSeeMore}>See more &rarr;</a>
+            </Link>
           </div>
         </div>
       </main>
