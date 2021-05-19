@@ -56,8 +56,8 @@ export const Home: React.FC<Props> = ({ postsData }) => {
             My name is Camden.
           </h1>
           <ul className={styles.nav}>
-            <li id={styles.portfolioNav}><span>Portfolio</span></li>
-            <li id={styles.blogNav}><span>Blog</span></li>
+            <li id={styles.portfolioNav} onClick={() => scrollToRef(portfolioRef)}><button><span>Portfolio</span></button></li>
+            <li id={styles.blogNav} onClick={() => scrollToRef(blogRef)}><button><span>Blog</span></button></li>
           </ul>
           {/* {portfolioScrollArrow} */}
         </div>

@@ -40,30 +40,31 @@
   margin: 0 auto;
 }
 
-.nav li {
-  text-decoration: none;
+.nav li button {
   width: 16vh;
   height: 10vh;
   background: #e9e9e9;
+  border: none;
   border-radius: 10%;
   color: #000000;
   transition: 0.23s;
   display: flex;
 }
 
-.nav li span {
+.nav li button span {
+  text-decoration: none;
   text-align: center;
   margin: auto;
   font-size: 2vh;
   transition: 0.23s;
 }
 
-.nav li:hover {
+.nav li button:hover {
   cursor: pointer;
   transform: scaleX(105%) scaleY(105%)
 }
 
-.nav li:hover span {
+.nav li button:hover span, .nav li button:focus span {
   text-decoration: underline;
 }
 
