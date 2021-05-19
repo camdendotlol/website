@@ -19,15 +19,21 @@ interface Props {
 
 export const Home: React.FC<Props> = ({ postsData }) => {
   const portfolioRef = useRef<HTMLInputElement>(null)
+  const blogRef = useRef<HTMLInputElement>(null)
 
-  // Not sure how to type ref here
-  const scrolltoRef = (ref: any) => ref?.current?.scrollIntoView({ behavior: 'smooth' })
+  const scrollToRef = (ref: any) => ref?.current?.scrollIntoView({ behavior: 'smooth' })
 
-  const downArrow = (
-    <svg onClick={() => scrolltoRef(portfolioRef)} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className={styles.downArrow} viewBox="0 0 16 16">
-    <path fillRule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
-  </svg>
-  )
+  // const portfolioScrollArrow = (
+  //   <svg onClick={() => scrollToRef(portfolioRef)} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className={styles.portfolioScrollArrow} viewBox="0 0 16 16">
+  //   <path fillRule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+  //   </svg>
+  // )
+
+  // const blogScrollArrow = (
+  //   <svg onClick={() => scrollToRef(blogRef)} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className={styles.blogScrollArrow} viewBox="0 0 16 16">
+  //   <path fillRule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+  //   </svg>
+  // )
 
   return (
     <div>
@@ -53,15 +59,18 @@ export const Home: React.FC<Props> = ({ postsData }) => {
             <li id={styles.portfolioNav}><span>Portfolio</span></li>
             <li id={styles.blogNav}><span>Blog</span></li>
           </ul>
-          {downArrow}
+          {/* {portfolioScrollArrow} */}
         </div>
         <div className={styles.container} id='portfolio-container' ref={portfolioRef}>
-          <h1 className={styles.title}>
-            I create websites.
-          </h1>
-          <Portfolio />
+          <div>
+            <h1 className={styles.title}>
+              I create websites.
+            </h1>
+            <Portfolio />
+          </div>
+          {/* {blogScrollArrow} */}
         </div>
-        <div className={styles.container} id={styles.blogContainer}>
+        <div className={styles.container} id={styles.blogContainer} ref={blogRef}>
           <h1 className={styles.blogHeader}>
             I also write a blog.
           </h1>
@@ -96,8 +105,9 @@ export const Home: React.FC<Props> = ({ postsData }) => {
           &copy; 2021 Camden Mecklem.
         </p>
         <p>
-          Header video from <a href="https://hubblesite.org/video/3/science">"Ultra Deep Field: Looking Out into Space, Looking Back into Time"</a> by the Space Telescope Science Institute under CC BY-NC-SA 4.0.
+          Header video from by the <a href="https://hubblesite.org/video/3/science">Space Telescope Science Institute</a> under CC BY-NC-SA 4.0.
         </p>
+        <p>Website made with <a href='https://nextjs.org/'>Next.js</a></p>
       </footer>
     </div>
   )
