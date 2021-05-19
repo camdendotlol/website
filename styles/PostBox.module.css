@@ -2,23 +2,22 @@
   width: 40vw;
   height: 25vw;
   margin: 0 auto;
-  border: 3px solid black;
   margin-bottom: 20px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   display: flex;
   align-items: center;
+  border-radius: 1.5%;
   transition: 0.23s;
 }
 
-.postbox:hover {
+.postbox:hover, .postbox:focus {
   cursor: pointer;
-  color: #000000;
-  border: 3px solid #E37893;
+  filter: brightness(85%)
 }
 
-.postbox:hover .postboxContent {
+.postbox:hover .postboxContent, .postbox:focus .postboxContent {
   color: #E37893;
 }
 

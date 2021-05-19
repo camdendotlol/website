@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import remark from 'remark'
+import remark, { stringify } from 'remark'
 import html from 'remark-html'
 
 const postsDirectory = path.join(process.cwd(), 'posts')
@@ -20,10 +20,20 @@ export const getSortedPostsData = () => {
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents)
 
+    // Support newlines in quotes
+    let quoteIter = matterResult.data.quote.split('')
+    quoteIter = quoteIter.map((c: string) => c === '\\' ? '\n' : c)
+    const quote = quoteIter.join('')
+
     // Combine the data with the id
     return {
       id,
-      ...(matterResult.data as { date: string; title: string })
+      quote: quote,
+      date: matterResult.data.date,
+      title: matterResult.data.title,
+      imageURL: matterResult.data.imageURL,
+      quoteType: matterResult.data.quoteType,
+      quoteAuthor: matterResult.data.quoteAuthor
     }
   })
   // Sort posts by date
@@ -54,6 +64,11 @@ export const getPostData = async (id: string) => {
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents)
 
+  // Support newlines in quotes
+  let quoteIter = matterResult.data.quote.split('')
+  quoteIter = quoteIter.map((c: string) => c === '\\' ? '\n' : c)
+  const quote = quoteIter.join('')
+
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
     .use(html)
@@ -64,6 +79,11 @@ export const getPostData = async (id: string) => {
   return {
     id,
     contentHtml,
-    ...(matterResult.data as { date: string; title: string, fun: string })
+    quote: quote,
+    date: matterResult.data.date,
+    title: matterResult.data.title,
+    imageURL: matterResult.data.imageURL,
+    quoteType: matterResult.data.quoteType,
+    quoteAuthor: matterResult.data.quoteAuthor
   }
 }

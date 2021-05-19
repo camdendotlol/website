@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { GetStaticProps } from 'next'
 import Date from '../components/date'
 import Portfolio from '../components/portfolio'
+import { useRef } from 'react'
 
 interface PostsData {
   date: string,
@@ -16,13 +17,18 @@ interface Props {
   postsData: PostsData[]
 }
 
-const downArrow = (
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className={styles.downArrow} viewBox="0 0 16 16">
-  <path fillRule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
-</svg>
-)
-
 export const Home: React.FC<Props> = ({ postsData }) => {
+  const portfolioRef = useRef<HTMLInputElement>(null)
+
+  // Not sure how to type ref here
+  const scrolltoRef = (ref: any) => ref?.current?.scrollIntoView({ behavior: 'smooth' })
+
+  const downArrow = (
+    <svg onClick={() => scrolltoRef(portfolioRef)} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className={styles.downArrow} viewBox="0 0 16 16">
+    <path fillRule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+  </svg>
+  )
+
   return (
     <div>
       <style jsx global>{`
@@ -49,7 +55,7 @@ export const Home: React.FC<Props> = ({ postsData }) => {
           </ul>
           {downArrow}
         </div>
-        <div className={styles.container}>
+        <div className={styles.container} id='portfolio-container' ref={portfolioRef}>
           <h1 className={styles.title}>
             I create websites.
           </h1>
@@ -66,7 +72,7 @@ export const Home: React.FC<Props> = ({ postsData }) => {
             </h1>
             <section>
               {/* Only fetch the most recent couple posts for the homepage */}
-              {postsData.slice(0, 2).map(({ id, date, title }) => (
+              {postsData.slice(0, 3).map(({ id, date, title }) => (
                 <div key={id}>
                 <h3>
                   <Link key={id} href={`/blog/${id}`}>
@@ -86,7 +92,12 @@ export const Home: React.FC<Props> = ({ postsData }) => {
         </div>
       </main>
       <footer className={styles.footer}>
-        &copy; 2021 Camden Mecklem
+        <p>
+          &copy; 2021 Camden Mecklem.
+        </p>
+        <p>
+          Header video from <a href="https://hubblesite.org/video/3/science">"Ultra Deep Field: Looking Out into Space, Looking Back into Time"</a> by the Space Telescope Science Institute under CC BY-NC-SA 4.0.
+        </p>
       </footer>
     </div>
   )

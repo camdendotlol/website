@@ -5,6 +5,12 @@
   font-weight: 900;
 }
 
+@font-face {
+  font-family: "Newsreader";
+  src: url("/fonts/Newsreader/Newsreader.ttf");
+  font-style: normal;
+}
+
 .container {
   margin: 0 auto;
   max-width: 60%;
@@ -13,12 +19,96 @@
 
 .title {
   font-size: 5em;
-  font-family: "Inter";
+  font-family: "Newsreader";
+  margin-bottom: 0;
+}
+
+.date {
+  font-family: "Newsreader";
+}
+
+.quoteBox {
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+.quoteTextProse {
+  font-size: 1.5em;
+  font-family: "Newsreader";
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.quoteTextPoetry {
+  font-size: 1.5em;
+  font-family: "Newsreader";
+  font-style: italic;
+  margin-bottom: 0;
+  text-align: center;
+  white-space: pre-wrap; /* Display multi-line quotes */
+}
+
+.quoteAuthor {
+  font-size: 1em;
+  font-family: "Newsreader";
+  margin-left: 80%;
+}
+
+.postHeaderImg {
+  max-width: 100%;
+  max-height: 50vh;
+  border-radius: 1.5%;
+}
+
+.blogPostContent {
+  font-size: 1.3em;
+  font-family: "Newsreader";
+  text-align: left;
+  line-height: 1.4em;
 }
 
 .subtitle {
   font-size: 3em;
   font-family: "Inter";
+}
+
+.homepageLink {
+  padding: 1vh;
+  margin-bottom: 1vh;
+}
+
+.homepageLink a {
+  transition: 0.23s;
+  text-decoration: underline;
+}
+
+.homepageLink a:hover {
+  color: #E37893;
+}
+
+.plugLink {
+  transition: 0.23s;
+  text-decoration: underline;
+}
+
+.plugLink:hover {
+  color: #E37893;
+}
+
+.backtoBlog {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.backtoBlog a {
+  text-decoration: underline;
+  font-size: 1.5em;
+  transition: 0.23s;
+}
+
+.backtoBlog a:hover {
+  color: #E37893;
 }
 
 @media screen and (max-width: 1400px) {
@@ -29,6 +119,10 @@
 
 @media screen and (max-width: 600px) {
   .container {
-    max-width: 100%;
+    max-width: 95%;
+  }
+
+  .title {
+    font-size: 3em;
   }
 }
