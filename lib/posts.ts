@@ -22,9 +22,7 @@ export const getSortedPostsData = () => {
     const matterResult = matter(fileContents)
 
     // Support newlines in quotes
-    let quoteIter = matterResult.data.quote.split('')
-    quoteIter = quoteIter.map((c: string) => c === '\\' ? '\n' : c)
-    const quote = quoteIter.join('')
+    const quote = matterResult.data.quote.replace(/\\/g, '\n')
 
     // Combine the data with the id
     return {
@@ -66,9 +64,7 @@ export const getPostData = async (id: string) => {
   const matterResult = matter(fileContents)
 
   // Support newlines in quotes
-  let quoteIter = matterResult.data.quote.split('')
-  quoteIter = quoteIter.map((c: string) => c === '\\' ? '\n' : c)
-  const quote = quoteIter.join('')
+  const quote = matterResult.data.quote.replace(/\\/g, '\n')
 
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
