@@ -11,10 +11,27 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Anonymous Pro";
+  src: url("/fonts/Anonymous Pro/AnonymousPro-Regular.ttf")
+}
+
 .container {
   margin: 0 auto;
   max-width: 60%;
   text-align: center;
+}
+
+.blogHeader {
+  text-align: center;
+  font-size: 1.3em;
+  font-family: "Newsreader";
+  text-decoration: underline;
+  transition: 0.23s;
+}
+
+.blogHeader:hover, .blogHeader:focus {
+  color: #E37893;
 }
 
 .title {
@@ -66,6 +83,18 @@
   font-family: "Newsreader";
   text-align: left;
   line-height: 1.4em;
+}
+
+.blogPostContent code {
+  font-family: "Anonymous Pro";
+  font-size: 0.8em;
+  line-height: 1.2em;
+  display: block;
+  background: lightgray;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding: 2%;
+  overflow: auto;
 }
 
 .subtitle {

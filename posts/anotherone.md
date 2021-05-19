@@ -9,7 +9,31 @@ quoteAuthor: 'Amogus'
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In hac habitasse platea dictumst vestibulum rhoncus. Sed elementum tempus egestas sed. A diam maecenas sed enim ut sem viverra aliquet. Maecenas sed enim ut sem viverra aliquet eget. Cum sociis natoque penatibus et magnis dis. Rhoncus dolor purus non enim praesent elementum facilisis leo vel. Parturient montes nascetur ridiculus mus mauris vitae ultricies. Tincidunt tortor aliquam nulla facilisi cras fermentum odio eu. Id ornare arcu odio ut sem. Maecenas sed enim ut sem viverra. Nulla porttitor massa id neque aliquam vestibulum. Amet nisl suscipit adipiscing bibendum est ultricies integer. Sed cras ornare arcu dui vivamus arcu felis bibendum. Gravida arcu ac tortor dignissim convallis aenean et. Nullam eget felis eget nunc lobortis mattis aliquam faucibus. Sit amet mattis vulputate enim nulla aliquet. Odio pellentesque diam volutpat commodo sed egestas. Non sodales neque sodales ut. Orci sagittis eu volutpat odio facilisis mauris sit.
 
-Sed tempus urna et pharetra pharetra. Lacinia at quis risus sed vulputate. Sed turpis tincidunt id aliquet. Ipsum faucibus vitae aliquet nec ullamcorper sit. Malesuada proin libero nunc consequat. Fermentum posuere urna nec tincidunt praesent. Sed vulputate mi sit amet mauris commodo quis. Pharetra diam sit amet nisl. Risus nec feugiat in fermentum posuere urna nec tincidunt. Aliquam ut porttitor leo a diam sollicitudin. Ac tortor vitae purus faucibus ornare suspendisse sed nisi. Eu nisl nunc mi ipsum faucibus vitae aliquet. Vel pharetra vel turpis nunc eget lorem dolor sed viverra. Velit dignissim sodales ut eu sem integer vitae justo.
+## Testing code blocks
+
+```ts
+let quoteIter = matterResult.data.quote.split('')
+quoteIter = quoteIter.map((c: string) => c === '\\' ? '\n' : c)
+const quote = quoteIter.join('')
+```
+
+```rs
+fn get_answer(clue: &String) -> Result<String, Box<dyn Error>> {
+  print!("{}: ", Paint::rgb(229, 178, 255, clue));
+
+  // Flushing stdout allows us to accept user input on the same line
+  io::stdout().flush().unwrap();
+
+  let mut answer = String::new();
+
+  io::stdin()
+    .read_line(&mut answer)
+    .expect("Invalid answer");
+  
+  // Trim the newline from the input
+  Ok(String::from(answer.trim()))
+}
+```
 
 Purus sit amet volutpat consequat mauris. Mattis pellentesque id nibh tortor. Pellentesque elit eget gravida cum sociis natoque. Ornare aenean euismod elementum nisi. Erat nam at lectus urna. Sed cras ornare arcu dui vivamus arcu. Nullam non nisi est sit amet facilisis. Ac feugiat sed lectus vestibulum mattis ullamcorper. Sed nisi lacus sed viverra. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus. Enim tortor at auctor urna nunc. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus. Mauris a diam maecenas sed enim ut. Sit amet nulla facilisi morbi. Massa tincidunt nunc pulvinar sapien.
 

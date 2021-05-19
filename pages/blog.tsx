@@ -15,31 +15,33 @@ interface Props {
   postsData: PostsData[]
 }
 
-export const BlogHome: React.FC<Props> = ({ postsData }) => (
-  <div>
-    <div className={styles.container}>
-      <h1 className={styles.title}>Camden's Blog</h1>
-      <div className={styles.homepageLink}>
-        <Link href='/'><a>&#8592; Return to homepage</a></Link>
+export const BlogHome: React.FC<Props> = ({ postsData }) => {
+  return (
+    <div>
+      <div className={styles.container}>
+        <h1 className={styles.title}>Camden's Blog</h1>
+        <div className={styles.homepageLink}>
+          <Link href='/'><a>&#8592; Return to homepage</a></Link>
+        </div>
+        <div>
+          {postsData.map(({ id, date, title, imageURL }) => (
+            <PostBox
+              id={id}
+              date={date}
+              title={title}
+              imageURL={imageURL}
+            />
+          ))}
+        </div>
       </div>
-      <div>
-        {postsData.map(({ id, date, title, imageURL }) => (
-          <PostBox
-            id={id}
-            date={date}
-            title={title}
-            imageURL={imageURL}
-          />
-        ))}
-      </div>
-    </div>
-    <style jsx global>{`
+      <style jsx global>{`
         body {
           background-color: #e9e9e9;
         }
       `}</style>
-  </div>
-)
+    </div>
+  )
+}
 
 export const getStaticProps: GetStaticProps = async () => {
   const postsData = getSortedPostsData()

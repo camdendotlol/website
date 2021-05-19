@@ -1,9 +1,13 @@
+import { useEffect } from 'react'
 import Date from '../../components/date'
 import Link from 'next/link'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { ParsedUrlQuery } from 'querystring'
 import styles from '../../styles/Blog.module.css'
+
+// Syntax highlighting CSS
+import 'highlight.js/styles/foundation.css'
 
 interface Props {
   postData: {
@@ -28,6 +32,7 @@ const Post: React.FC<Props> = ({ postData }) => {
 
   return (
     <div className={styles.container}>
+      <p className={styles.blogHeader}><Link href="/blog/"><a>Camden Mecklem's Blog</a></Link></p>
       <h1 className={styles.title}>{postData.title}</h1>
       <p className={styles.date}>&#8213; <Date dateString={postData.date} /> &#8213;</p>
       <img className={styles.postHeaderImg} src={postData.imageURL} alt=""/>
