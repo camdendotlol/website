@@ -1,4 +1,8 @@
-.postbox {
+.blogLink {
+  text-decoration: none;
+}
+
+.largePostbox {
   width: 40vw;
   height: 25vw;
   margin: 0 auto;
@@ -8,23 +12,41 @@
   background-position: center center;
   display: flex;
   align-items: center;
+  font-size: 1.5em;
   border-radius: 1.5%;
   transition: 0.23s;
 }
 
-.postbox:hover, .postbox:focus {
-  cursor: pointer;
-  filter: brightness(85%)
+.smallPostbox {
+  color: #e9e9e9;
+  width: 15vw;
+  height: 15vw;
+  min-width: 200px;
+  min-height: 200px;
+  margin: 0 auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  border-radius: 5%;
+  transition: 0.23s;
+  font-size: 1em;
 }
 
-.postbox:hover .postboxContent, .postbox:focus .postboxContent {
+.largePostbox:hover, .largePostbox:focus, .smallPostbox:hover, .smallPostbox:focus {
+  cursor: pointer;
+  filter: brightness(85%);
+  text-decoration: none; /* override global setting */
+}
+
+.largePostbox:hover .postboxContent, .largePostbox:focus .postboxContent, .smallPostbox:hover .postboxContent, .smallPostbox:focus .postboxContent {
   color: #E37893;
 }
 
 .postboxContent {
   color: white;
   background-color: rgba(0, 0, 0, 0.6);
-  font-size: 1.5em;
   width: 100%;
   padding: 2vw;
   transition: 0.23s;
@@ -38,13 +60,17 @@
 }
 
 @media screen and (max-width: 600px) {
-  .postbox {
+  .largePostbox {
     width: 90vw;
     height: 60vw;
     padding: 0;
   }
 
+  .smallPostbox {
+    width: 60vw;
+  }
+
   .postboxContent {
-    font-size: 1.3em;
+    font-size: 0.8em;
   }
 }

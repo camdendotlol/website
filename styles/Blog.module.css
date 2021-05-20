@@ -30,10 +30,6 @@
   transition: 0.23s;
 }
 
-.blogHeader:hover, .blogHeader:focus {
-  color: #E37893;
-}
-
 .title {
   font-size: 5em;
   font-family: "Newsreader";
@@ -69,7 +65,7 @@
 .quoteAuthor {
   font-size: 1em;
   font-family: "Newsreader";
-  margin-left: 80%;
+  text-align: right;
 }
 
 .postHeaderImg {
@@ -79,7 +75,7 @@
 }
 
 .blogPostContent {
-  font-size: 1.3em;
+  font-size: 1.4em;
   font-family: "Newsreader";
   text-align: left;
   line-height: 1.4em;
@@ -149,6 +145,10 @@
 @media screen and (max-width: 600px) {
   .container {
     max-width: 95%;
+  }
+
+  .blogPostContent {
+    font-size: 1.3em;
   }
 
   .title {

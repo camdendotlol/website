@@ -22,7 +22,7 @@ export const getSortedPostsData = () => {
     const matterResult = matter(fileContents)
 
     // Support newlines in quotes
-    const quote = matterResult.data.quote.replace(/\\/g, '\n')
+    let quote = matterResult.data.quote.replace(/\//g, '\n')
 
     // Combine the data with the id
     return {
@@ -64,19 +64,22 @@ export const getPostData = async (id: string) => {
   const matterResult = matter(fileContents)
 
   // Support newlines in quotes
-  const quote = matterResult.data.quote.replace(/\\/g, '\n')
-
+  let quote = matterResult.data.quote.replace(/\//g, '\n')
+  
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
-    .use(html)
-    .use(highlight)
-    .process(matterResult.content)
+  .use(html)
+  .use(highlight)
+  .process(matterResult.content)
   const contentHtml = processedContent.toString()
+  
+  // Replace my favorite punctuation mark with an em dash
+  const finalContentHtml = contentHtml.replace(/ - /g, ' — ')
 
   // Combine the data with the id and contentHtml
   return {
     id,
-    contentHtml,
+    contentHtml: finalContentHtml,
     quote: quote,
     date: matterResult.data.date,
     title: matterResult.data.title,

@@ -3,31 +3,39 @@ import Link from 'next/link'
 import Date from '../components/date'
 import styles from '../styles/PostBox.module.css'
 
-interface Props {
-  date: string,
-  title: string,
-  id: string,
-  imageURL: string
+export enum boxSize {
+  small,
+  large
 }
 
-const PostBox: React.FC<Props> = ({ date, title, id, imageURL }) => {
+interface Props {
+  postData: {
+    date: string,
+    title: string,
+    id: string,
+    imageURL: string
+  },
+  size: boxSize
+}
+
+const PostBox: React.FC<Props> = ({ postData, size }) => {
   return (
-    <Link key={id} href={`/blog/${id}`}>
-      <a>
-        <div className={`postbox ${styles.postbox}`}>
+    <Link key={postData.id} href={`/blog/${postData.id}`}>
+      <a className={styles.blogLink}>
+        <div className={size === boxSize.large ? `postbox ${styles.largePostbox}` : `postbox ${styles.smallPostbox}`}>
           <style jsx>
             {
               `.postbox {
-                background-image: url(${imageURL})
+                background-image: url(${postData.imageURL})
               }`
             }
           </style>
           <div className={styles.postboxContent}>
             <h3>
-                {title}
+                {postData.title}
             </h3>
             <small>
-              <Date dateString={date} />
+              <Date dateString={postData.date} />
             </small>
           </div>
         </div>

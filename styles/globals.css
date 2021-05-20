@@ -7,8 +7,13 @@ body {
 }
 
 a {
+  text-decoration: underline;
   color: inherit;
-  text-decoration: none;
+  transition: 0.23s;
+}
+
+a:hover, a:focus {
+  color: #E37893;
 }
 
 * {
