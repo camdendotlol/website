@@ -37,7 +37,7 @@ export const Home: React.FC<Props> = ({ postsData }) => {
         <meta name="description" content="Camden Mecklem's personal website" />
         <link rel="shortcut icon" type="image/png" href="/favicon.png" />
       </Head>
-      <video className={styles.video} preload="auto" autoPlay muted loop id="bgvid">
+      <video className={styles.video} preload="auto" playsInline autoPlay muted loop id="bgvid">
         <source src="/vid/space.mp4" type="video/mp4" />
       </video>
       <main>
