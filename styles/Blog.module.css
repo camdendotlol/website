@@ -81,11 +81,11 @@
   line-height: 1.4em;
 }
 
-.blogPostContent p:first-child:first-letter {
-  font-size: 3em;
+.blogPostContent p:first-child::first-letter {
   float: left;
-  padding-top: 6px;
-  padding-right: 6px;
+  font-size: 2.9em;
+  line-height: 0.8;
+  margin: 0.13em 0.1em 0 0;
 }
 
 .blogPostContent code {
