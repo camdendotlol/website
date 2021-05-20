@@ -81,6 +81,13 @@
   line-height: 1.4em;
 }
 
+.blogPostContent p:first-child:first-letter {
+  font-size: 3em;
+  float: left;
+  padding-top: 6px;
+  padding-right: 6px;
+}
+
 .blogPostContent code {
   font-family: "Anonymous Pro";
   font-size: 0.8em;
