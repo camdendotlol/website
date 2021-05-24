@@ -36,6 +36,18 @@ export const Home: React.FC<Props> = ({ postsData }) => {
         <title>Camden Mecklem</title>
         <meta name="description" content="Camden Mecklem's personal website" />
         <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+        <meta name="description" content="Camden Mecklem is a web developer in the Cincinnati area." />
+
+        <meta property="og:title" content="Camden Mecklem" />
+        <meta property="og:description" content="Camden Mecklem is a web developer in the Cincinnati area." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://camdenmecklem.com" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="camdenmecklem.com" />
+        <meta property="twitter:url" content="https://camdenmecklem.com" />
+        <meta name="twitter:title" content="Camden Mecklem" />
+        <meta name="twitter:description" content="Camden Mecklem is a web developer in the Cincinnati area." />
       </Head>
       <video className={styles.video} preload="auto" playsInline autoPlay muted loop id="bgvid">
         <source src="/vid/space.mp4" type="video/mp4" />
