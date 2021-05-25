@@ -33,7 +33,6 @@ export const Home: React.FC<Props> = ({ postsData }) => {
       `}</style>
       <Head>
         <title>Camden Mecklem</title>
-        <meta name="description" content="Camden Mecklem's personal website" />
         <link rel="shortcut icon" type="image/png" href="/favicon.png" />
         <meta name="description" content="Camden Mecklem is a web developer in the Cincinnati area." />
 
