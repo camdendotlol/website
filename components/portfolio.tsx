@@ -24,7 +24,7 @@ const Portfolio: React.FC = () => {
           <p>Kauthar Marlie</p>
         </li>
         <li className={styles.portfolioItem}>
-          <a href="https://links.camdenmecklem.com/">
+          <a href="http://links.camdenmecklem.com/">
             <img className={styles.portfolioImage} id={styles.linksImage} src="/img/links.webp" alt="" />
           </a>
           <p>Links</p>
