@@ -23,7 +23,17 @@ const Portfolio: React.FC = () => {
           </a>
           <p>Kauthar Marlie</p>
         </li>
+        <li className={styles.portfolioItem}>
+          <a href="https://links.camdenmecklem.com/">
+            <img className={styles.portfolioImage} id={styles.linksImage} src="/img/links.webp" alt="" />
+          </a>
+          <p>Links</p>
+        </li>
       </ul>
+      <p className={styles.githubLink}>
+        <img src="/img/GitHub-Mark-64px.png" alt="" />
+        <a href='https://github.com/mythmakerseven'>Check out my Github for more.</a>
+      </p>
     </section>
   )
 }
