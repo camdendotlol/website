@@ -38,6 +38,8 @@
   max-width: 600px;
   gap: 3rem;
   margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .nav li {
@@ -155,10 +157,6 @@
   }
 
   .blogPosts {
-    flex-flow: column;
-  }
-
-  .nav {
     flex-flow: column;
   }
 }
