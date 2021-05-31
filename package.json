@@ -10,9 +10,9 @@
     "build:ghp": "rm -r docs && next build && next export && mv out docs"
   },
   "dependencies": {
-    "date-fns": "^2.21.3",
+    "date-fns": "^2.22.1",
     "gray-matter": "^4.0.3",
-    "highlight.js": "^10.7.2",
+    "highlight.js": "^11.0.0",
     "next": "10.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -21,8 +21,8 @@
     "remark-html": "^13.0.1"
   },
   "devDependencies": {
-    "@types/node": "^15.6.0",
-    "@types/react": "^17.0.6",
-    "typescript": "^4.2.4"
+    "@types/node": "^15.6.1",
+    "@types/react": "^17.0.8",
+    "typescript": "^4.3.2"
   }
 }
