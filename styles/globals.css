@@ -9,7 +9,7 @@ body {
 a {
   text-decoration: underline;
   color: inherit;
-  transition: 0.23s;
+  transition: 0.2s;
 }
 
 a:hover, a:focus {

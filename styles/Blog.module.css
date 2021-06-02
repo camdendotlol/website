@@ -27,7 +27,7 @@
   font-size: 1.3em;
   font-family: "Newsreader";
   text-decoration: underline;
-  transition: 0.23s;
+  transition: 0.2s;
 }
 
 .title {
@@ -111,7 +111,7 @@
 }
 
 .homepageLink a {
-  transition: 0.23s;
+  transition: 0.2s;
   text-decoration: underline;
 }
 
@@ -120,7 +120,7 @@
 }
 
 .plugLink {
-  transition: 0.23s;
+  transition: 0.2s;
   text-decoration: underline;
 }
 
@@ -136,7 +136,7 @@
 .backtoBlog a {
   text-decoration: underline;
   font-size: 1.5em;
-  transition: 0.23s;
+  transition: 0.2s;
 }
 
 .backtoBlog a:hover {

@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import Date from '../../components/date'
 import Link from 'next/link'
 import Head from 'next/head'
