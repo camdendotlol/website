@@ -41,7 +41,7 @@
 }
 
 .largePostbox:hover .postboxContent, .largePostbox:focus .postboxContent, .smallPostbox:hover .postboxContent, .smallPostbox:focus .postboxContent {
-  color: #E37893;
+  color: #ff7f50;
 }
 
 .postboxContent {

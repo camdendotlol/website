@@ -116,7 +116,7 @@
 }
 
 .homepageLink a:hover {
-  color: #E37893;
+  color: #ff7f50;
 }
 
 .plugLink {
@@ -125,7 +125,7 @@
 }
 
 .plugLink:hover {
-  color: #E37893;
+  color: #ff7f50;
 }
 
 .backtoBlog {
@@ -140,7 +140,7 @@
 }
 
 .backtoBlog a:hover {
-  color: #E37893;
+  color: #ff7f50;
 }
 
 @media screen and (max-width: 1400px) {
