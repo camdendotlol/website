@@ -2,4 +2,6 @@
 
 Available at [https://camdenmecklem.com](https://camdenmecklem.com)
 
-Maybe I'll write a nice readme someday.
+## Developer reflection
+
+If you're looking for the type of reflection I do for my other projects, my first blog post should fill that role: [https://camdenmecklem.com/blog/hello](https://camdenmecklem.com/blog/hello)
