@@ -55,7 +55,7 @@ const Post: React.FC<Props> = ({ postData }) => {
         </div>
         <style jsx global>{`
           body {
-            background-color: #e9e9e9;
+            background-color: #f6f6f6;
           }
         `}</style>
       </div>

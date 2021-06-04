@@ -18,8 +18,11 @@
 
 .container {
   margin: 0 auto;
-  max-width: 60%;
+  max-width: 50%;
   text-align: center;
+  background-color: #f6f6f6;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .blogHeader {
