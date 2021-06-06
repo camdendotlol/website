@@ -50,14 +50,14 @@
 }
 
 .quoteTextProse {
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-family: "Newsreader";
   font-style: italic;
   margin-bottom: 0;
 }
 
 .quoteTextPoetry {
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-family: "Newsreader";
   font-style: italic;
   margin-bottom: 0;
@@ -66,7 +66,7 @@
 }
 
 .quoteAuthor {
-  font-size: 1em;
+  font-size: 0.8em;
   font-family: "Newsreader";
   text-align: right;
 }
@@ -78,16 +78,17 @@
 }
 
 .blogPostContent {
-  font-size: 1.4em;
+  font-size: 1.35em;
   font-family: "Newsreader";
   text-align: left;
-  line-height: 1.4em;
+  line-height: 1.3em;
 }
 
+/* This is super fiddly, Blink and Gecko seem to display it differently unless it's very finely-tuned. */
 .blogPostContent p:first-child::first-letter {
   float: left;
-  font-size: 2.9em;
-  line-height: 0.8;
+  font-size: 2.6em;
+  line-height: 0.86em;
   margin: 0.13em 0.1em 0 0;
 }
 
