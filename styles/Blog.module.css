@@ -71,10 +71,31 @@
   text-align: right;
 }
 
-.postHeaderImg {
-  max-width: 100%;
-  max-height: 50vh;
+/* The ugly !importants below are because of goofy styling that nextjs */
+/* applies to Image components by default. */
+
+.headerContainer {
+  padding: 0 !important;
+  box-sizing: border-box;
+  margin: 0 auto !important;
+}
+
+.headerContainer div {
+  position: unset !important;
+  max-width: 60%;
+  margin: 0 auto !important;
+  text-align: center;
+}
+
+.headerContainer div img {
+  margin: 0 auto !important;
   border-radius: 1.5%;
+  min-height: unset !important;
+  max-width: 100% !important;
+  min-width: unset !important;
+  height: unset !important;
+  width: unset !important;
+  position: unset !important;
 }
 
 .blogPostContent {
@@ -151,11 +172,20 @@
   .container {
     max-width: 80%;
   }
+
+  .headerContainer div {
+    max-width: 60vw !important;
+  }
+
 }
 
 @media screen and (max-width: 600px) {
   .container {
     max-width: 95%;
+  }
+
+  .headerContainer div {
+    max-width: 100% !important;
   }
 
   .blogPostContent {

@@ -1,10 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
 import styles from '../styles/Portfolio.module.css'
-import groupreadImage from '../public/img/groupread.webp'
-import linearAImage from '../public/img/lineara.webp'
-import kautharImage from '../public/img/kauthar.webp'
-import linksImage from '../public/img/links.webp'
+import groupreadImage from '../public/img/groupread.png'
+import linearAImage from '../public/img/lineara.png'
+import kautharImage from '../public/img/kauthar.png'
+import linksImage from '../public/img/links.png'
 import githubLogo from '../public/img/GitHub-Mark-64px.png'
 
 const Portfolio: React.FC = () => {

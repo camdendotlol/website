@@ -7,22 +7,29 @@
   padding: 0;
 }
 
-.portfolioItem img {
-  height: 180px !important;
-  width: 180px !important;
-  border-radius: 50% !important;
-  border: solid 4px #f6f6f6 !important;
-  transition: 0.2s !important;
+.portfolioItem a div img {
+  object-fit: cover;
 }
 
-.portfolioItem {
+.portfolioImage {
+  border-radius: 50% !important;
+  border: solid 4px #f6f6f6 !important;
+}
+
+.portfolioItem div {
+  height: 180px;
+  width: 180px;
   display: flex;
   flex-flow: column;
   justify-self: center;
   margin: 0 auto;
 }
 
-.portfolioImage:hover, a:focus .portfolioImage {
+.portfolioItem {
+  transition: filter 0.2s;
+}
+
+.portfolioItem:hover, a:focus .portfolioItem {
   filter: brightness(0.7);
 }
 

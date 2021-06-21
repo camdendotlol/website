@@ -21,12 +21,12 @@ export const BlogHome: React.FC<Props> = ({ postsData }) => {
   return (
     <>
       <Head>
-        <title>Camden`&apos;`s Blog</title>
+        <title>Camden&apos;s Blog</title>
         <link rel="shortcut icon" type="image/png" href="/favicon.png" />
       </Head>
       <div>
         <div className={styles.container}>
-          <h1 className={styles.title}>Camden`&apos;`s Blog</h1>
+          <h1 className={styles.title}>Camden&apos;s Blog</h1>
           <div className={styles.homepageLink}>
             <Link href='/'><a>&#8592; Return to homepage</a></Link>
           </div>
