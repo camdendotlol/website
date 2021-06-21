@@ -33,14 +33,14 @@ const Post: React.FC<Props> = ({ postData }) => {
   return (
     <>
       <Head>
-        <title>{postData.title} - Camden's Blog</title>
+        <title>{postData.title} - Camden`&apos;`s Blog</title>
         <link rel="shortcut icon" type="image/png" href="/favicon.png" />
       </Head>
       <div className={styles.container}>
-        <p className={styles.blogHeader}><Link href="/blog/"><a>Camden's Blog</a></Link></p>
+        <p className={styles.blogHeader}><Link href="/blog/"><a>Camden`&apos;`s Blog</a></Link></p>
         <h1 className={styles.title}>{postData.title}</h1>
         <p className={styles.date}>&#8213; <Date dateString={postData.date} /> &#8213;</p>
-        <img className={styles.postHeaderImg} src={postData.imageURL} alt=""/>
+        <img className={styles.postHeaderImg} src={postData.imageURL} alt=''/>
         <div className={styles.quoteBox}>
           <p className={getTextStyle()}>{postData.quote}</p>
           <p className={styles.quoteAuthor}>&#8212; {postData.quoteAuthor}</p>

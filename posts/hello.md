@@ -1,7 +1,7 @@
 ---
 title: 'I Made a Website'
 date: '2021-05-19'
-imageURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Ancientlibraryalex.jpg/1024px-Ancientlibraryalex.jpg'
+imageURL: '/img/alexandria.jpg'
 quote: "What if I told you/I feel like I know you?/But we never met/It's for the best"
 quoteType: 'poetry'
 quoteAuthor: 'Phoebe Bridgers'

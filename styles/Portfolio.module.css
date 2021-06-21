@@ -7,12 +7,12 @@
   padding: 0;
 }
 
-.portfolioImage {
-  height: 180px;
-  width: 180px;
-  border-radius: 50%;
-  border: solid 4px #f6f6f6;
-  transition: 0.2s;
+.portfolioItem img {
+  height: 180px !important;
+  width: 180px !important;
+  border-radius: 50% !important;
+  border: solid 4px #f6f6f6 !important;
+  transition: 0.2s !important;
 }
 
 .portfolioItem {
@@ -24,22 +24,6 @@
 
 .portfolioImage:hover, a:focus .portfolioImage {
   filter: brightness(0.7);
-}
-
-#groupreadImage:hover, a:focus #groupreadImage {
-  border-color: #ff7f50;
-}
-
-#linearaImage:hover, a:focus #linearaImage {
-  border-color: #ff7f50;
-}
-
-#kautharImage:hover, a:focus #kautharImage {
-  border-color: #ff7f50;
-}
-
-#linksImage:hover, a:focus #linksImage {
-  border-color: #ff7f50;
 }
 
 .githubLink {
