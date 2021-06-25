@@ -26,11 +26,18 @@
 }
 
 .portfolioItem {
-  transition: filter 0.2s;
+  transition: all 0.2s;
 }
 
-.portfolioItem:hover, a:focus .portfolioItem {
+.portfolioItem:hover, .portfolioItem:focus {
   filter: brightness(0.7);
+  transform: translateY(-10px);
+  outline: 0;
+}
+
+.portfolioItem a {
+  text-decoration: none;
+  color: #f6f6f6;
 }
 
 .githubLink {

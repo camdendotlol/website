@@ -38,6 +38,7 @@
   cursor: pointer;
   filter: brightness(85%);
   text-decoration: none; /* override global setting */
+  outline: 0;
 }
 
 .largePostbox:hover .postboxContent, .largePostbox:focus .postboxContent, .smallPostbox:hover .postboxContent, .smallPostbox:focus .postboxContent {

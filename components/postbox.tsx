@@ -21,8 +21,8 @@ interface Props {
 const PostBox: React.FC<Props> = ({ postData, size }) => {
   return (
     <Link key={postData.id} href={`/blog/${postData.id}`}>
-      <a className={styles.blogLink}>
-        <div className={size === boxSize.large ? `postbox ${styles.largePostbox}` : `postbox ${styles.smallPostbox}`}>
+      <a className={styles.blogLink} tabIndex={-1}>
+        <div className={size === boxSize.large ? `postbox ${styles.largePostbox}` : `postbox ${styles.smallPostbox}`} tabIndex={0}>
           <style jsx>
             {
               `.postbox {

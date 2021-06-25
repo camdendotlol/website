@@ -64,9 +64,10 @@
   transition: 0.2s;
 }
 
-.nav li button:hover {
+.nav li button:hover, .nav li button:focus {
   cursor: pointer;
-  transform: scaleX(105%) scaleY(105%)
+  transform: scaleX(105%) scaleY(105%);
+  outline: 0;
 }
 
 .nav li button:hover span, .nav li button:focus span {

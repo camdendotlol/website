@@ -12,35 +12,35 @@ const Portfolio: React.FC = () => {
   return (
     <section>
       <ul className={styles.portfolioDisplay}>
-        <li className={styles.portfolioItem}>
-          <a href="https://gr.camdenmecklem.com/">
+        <li className={styles.portfolioItem} tabIndex={0}>
+          <a href="https://gr.camdenmecklem.com/" tabIndex={-1}>
             <Image className={styles.portfolioImage} src={groupreadImage} alt="" />
+            <p>Groupread</p>
           </a>
-          <p>Groupread</p>
         </li>
-        <li className={styles.portfolioItem}>
-          <a href="https://la.camdenmecklem.com">
+        <li className={styles.portfolioItem} tabIndex={0}>
+          <a href="https://la.camdenmecklem.com" tabIndex={-1}>
             <Image className={styles.portfolioImage} src={linearAImage} alt="" />
+            <p>Linear A</p>
           </a>
-          <p>Linear A</p>
         </li>
-        <li className={styles.portfolioItem}>
-          <a href="https://iamkauthar.work/">
+        <li className={styles.portfolioItem} tabIndex={0}>
+          <a href="https://iamkauthar.work/" tabIndex={-1}>
             <Image className={styles.portfolioImage} src={kautharImage} alt="" />
+            <p>Kauthar Marlie</p>
           </a>
-          <p>Kauthar Marlie</p>
         </li>
-        <li className={styles.portfolioItem}>
-          <a href="http://links.camdenmecklem.com/">
+        <li className={styles.portfolioItem} tabIndex={0}>
+          <a href="http://links.camdenmecklem.com/" tabIndex={-1}>
             <Image className={styles.portfolioImage} src={linksImage} alt="" />
+            <p>Links</p>
           </a>
-          <p>Links</p>
         </li>
-        <li className={styles.portfolioItem}>
-          <a>
+        <li className={styles.portfolioItem} tabIndex={0}>
+          <a tabIndex={-1}>
             <Image className={styles.portfolioImage} src={camdenImage} alt="" />
+            <p>This one :)</p>
           </a>
-          <p>This one :)</p>
         </li>
       </ul>
       <p className={styles.githubLink}>

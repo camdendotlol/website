@@ -56,9 +56,29 @@ export const Home: React.FC<Props> = ({ postsData }) => {
             My name is Camden.
           </h1>
           <ul className={styles.nav}>
-            <li id={styles.portfolioNav} onClick={() => scrollToRef(portfolioRef)}><button><span>Portfolio</span></button></li>
-            <li id={styles.blogNav} onClick={() => scrollToRef(blogRef)}><button><span>Blog</span></button></li>
-            <li onClick={() => window.location.href='/resume.pdf'}><button><span>Resume</span></button></li>
+            <li
+              id={styles.portfolioNav}
+              onClick={() => scrollToRef(portfolioRef)}
+            >
+              <button>
+                <span>Portfolio</span>
+              </button>
+            </li>
+            <li
+              id={styles.blogNav}
+              onClick={() => scrollToRef(blogRef)}
+            >
+              <button>
+                <span>Blog</span>
+              </button>
+            </li>
+            <li
+              onClick={() => window.location.href='/resume.pdf'}
+            >
+              <button>
+                <span>Resume</span>
+              </button>
+            </li>
           </ul>
         </div>
         <div className={styles.container} id='portfolio-container' ref={portfolioRef}>
