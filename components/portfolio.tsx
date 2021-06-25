@@ -6,6 +6,7 @@ import linearAImage from '../public/img/lineara.png'
 import kautharImage from '../public/img/kauthar.png'
 import linksImage from '../public/img/links.png'
 import githubLogo from '../public/img/GitHub-Mark-64px.png'
+import camdenImage from '../public/img/camdenmecklem.png'
 
 const Portfolio: React.FC = () => {
   return (
@@ -34,6 +35,12 @@ const Portfolio: React.FC = () => {
             <Image className={styles.portfolioImage} src={linksImage} alt="" />
           </a>
           <p>Links</p>
+        </li>
+        <li className={styles.portfolioItem}>
+          <a>
+            <Image className={styles.portfolioImage} src={camdenImage} alt="" />
+          </a>
+          <p>This one :)</p>
         </li>
       </ul>
       <p className={styles.githubLink}>
