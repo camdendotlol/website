@@ -18,7 +18,9 @@ interface Props {
     quote: string,
     quoteType: string,
     quoteAuthor: string,
-    imageURL: string
+    imageURL: string,
+    imageWidth: number,
+    imageHeight: number,
     contentHtml: string,
   }
 }
@@ -42,8 +44,8 @@ const Post: React.FC<Props> = ({ postData }) => {
         <p className={styles.blogHeader}><Link href="/blog/"><a>Camden&apos;s Blog</a></Link></p>
         <h1 className={styles.title}>{postData.title}</h1>
         <p className={styles.date}>&#8213; <Date dateString={postData.date} /> &#8213;</p>
-        <div className={styles.headerContainer}>
-          <Image layout='fill' className={styles.postHeaderImg} src={postData.imageURL} sizes='100%' alt='' />
+        <div className={styles.postHeaderImg}>
+          <Image width={postData.imageWidth} height={postData.imageHeight} className={styles.postHeaderImg} src={postData.imageURL} alt='' />
         </div>
         <div className={styles.quoteBox}>
           <p className={getTextStyle()}>{postData.quote}</p>

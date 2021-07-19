@@ -4,8 +4,10 @@ import matter from 'gray-matter'
 import remark from 'remark'
 import highlight from 'remark-highlight.js'
 import html from 'remark-html'
+import imageSize from 'image-size'
 
 const postsDirectory = path.join(process.cwd(), 'posts')
+const imageDirectory = path.join(process.cwd(), 'public')
 
 export const getSortedPostsData = () => {
   // Get file names under /posts
@@ -24,6 +26,9 @@ export const getSortedPostsData = () => {
     // Support newlines in quotes
     let quote = matterResult.data.quote.replace(/\//g, '\n')
 
+    // Get dimensions so the post component can make room for the image before it loads
+    const dimensions = imageSize(path.join(imageDirectory, matterResult.data.imageURL))
+
     // Combine the data with the id
     return {
       id,
@@ -31,6 +36,8 @@ export const getSortedPostsData = () => {
       date: matterResult.data.date,
       title: matterResult.data.title,
       imageURL: matterResult.data.imageURL,
+      imageWidth: dimensions.width,
+      imageHeight: dimensions.height,
       quoteType: matterResult.data.quoteType,
       quoteAuthor: matterResult.data.quoteAuthor
     }
@@ -76,6 +83,9 @@ export const getPostData = async (id: string) => {
   // Replace my favorite punctuation mark with an em dash
   const finalContentHtml = contentHtml.replace(/ - /g, ' — ')
 
+  // Get dimensions so the post component can make room for the image before it loads
+  const dimensions = imageSize(path.join(imageDirectory, matterResult.data.imageURL))
+
   // Combine the data with the id and contentHtml
   return {
     id,
@@ -84,6 +94,8 @@ export const getPostData = async (id: string) => {
     date: matterResult.data.date,
     title: matterResult.data.title,
     imageURL: matterResult.data.imageURL,
+    imageWidth: dimensions.width,
+    imageHeight: dimensions.height,
     quoteType: matterResult.data.quoteType,
     quoteAuthor: matterResult.data.quoteAuthor
   }

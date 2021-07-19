@@ -33,6 +33,15 @@
   transition: 0.2s;
 }
 
+.postHeaderImg {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.postHeaderImg img {
+  border-radius: 10px;
+}
+
 .title {
   font-size: 5em;
   font-family: "Newsreader";
@@ -69,33 +78,6 @@
   font-size: 0.8em;
   font-family: "Newsreader";
   text-align: right;
-}
-
-/* The ugly !importants below are because of goofy styling that nextjs */
-/* applies to Image components by default. */
-
-.headerContainer {
-  padding: 0 !important;
-  box-sizing: border-box;
-  margin: 0 auto !important;
-}
-
-.headerContainer div {
-  position: unset !important;
-  max-width: 60%;
-  margin: 0 auto !important;
-  text-align: center;
-}
-
-.headerContainer div img {
-  margin: 0 auto !important;
-  border-radius: 1.5%;
-  min-height: unset !important;
-  max-width: 100% !important;
-  min-width: unset !important;
-  height: unset !important;
-  width: unset !important;
-  position: unset !important;
 }
 
 .blogPostContent {
@@ -168,24 +150,33 @@
   color: #ff7f50;
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1600px) {
   .container {
-    max-width: 80%;
+    max-width: 60%;
   }
 
-  .headerContainer div {
-    max-width: 60vw !important;
+  .postHeaderImg {
+    width: 60%;
   }
-
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
+  .container {
+    max-width: 85%;
+  }
+
+  .postHeaderImg {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 800px) {
   .container {
     max-width: 95%;
   }
 
-  .headerContainer div {
-    max-width: 100% !important;
+  .postHeaderImg {
+    width: 90%;
   }
 
   .blogPostContent {
