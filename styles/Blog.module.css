@@ -18,7 +18,7 @@
 
 .container {
   margin: 0 auto;
-  max-width: 50%;
+  width: 1000px;
   text-align: center;
   background-color: #f6f6f6;
   padding-left: 5px;
@@ -35,11 +35,13 @@
 
 .postHeaderImg {
   margin: 0 auto;
-  width: 70%;
 }
 
 .postHeaderImg img {
   border-radius: 10px;
+  height: 540px;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .title {
@@ -150,35 +152,17 @@
   color: #ff7f50;
 }
 
-@media screen and (max-width: 1600px) {
-  .container {
-    max-width: 60%;
-  }
-
-  .postHeaderImg {
-    width: 60%;
-  }
-}
-
 @media screen and (max-width: 1000px) {
   .container {
-    max-width: 85%;
+    width: 98%;
   }
 
-  .postHeaderImg {
-    width: 70%;
+  .postHeaderImg img {
+    height: 300px;
   }
 }
 
 @media screen and (max-width: 800px) {
-  .container {
-    max-width: 95%;
-  }
-
-  .postHeaderImg {
-    width: 90%;
-  }
-
   .blogPostContent {
     font-size: 1.3em;
   }
