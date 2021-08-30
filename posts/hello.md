@@ -23,14 +23,4 @@ I've never enjoyed having to constantly scroll while reading an article, so text
 
 Every blog post contains a header image and a relevant quote. Posts certainly feel like they have high production quality this way.
 
-Several blogs and websites provided design inspiration, even if it's not obvious:
-
-* [Amethyst Game Engine](https://amethyst.rs/)
-* [André Staltz](https://staltz.com/blog.html)
-* [fasterthanli.me](https://fasterthanli.me/articles)
-* [no.lol](https://www.no.lol/)
-* [overreacted.io](https://overreacted.io/)
-
-...and probably many more that I've come across over the years.
-
 As stated above, this site's code is pretty sloppy, but it's [on GitHub](https://github.com/mythmakerseven/website) if you want to check it out.
