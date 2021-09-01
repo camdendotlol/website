@@ -9,7 +9,6 @@ import styles from '../../styles/Blog.module.css'
 
 // Syntax highlighting CSS
 import 'highlight.js/styles/foundation.css'
-import { useEffect, useState } from 'react'
 
 interface Props {
   postData: {
@@ -22,6 +21,8 @@ interface Props {
     imageWidth: number,
     imageHeight: number,
     contentHtml: string,
+    plainText: string,
+    path: string
   }
 }
 
@@ -34,11 +35,31 @@ const Post: React.FC<Props> = ({ postData }) => {
     }
   }
 
+  const getMetadataSnippet = (text: string): string => {
+    if (text.length < 200) {
+      return text
+    } else {
+      return `${text.slice(0, 197)}...`
+    }
+  }
+
   return (
     <>
       <Head>
         <title>{postData.title} - Camden&apos;s Blog</title>
         <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+        <meta property="og:title" content={`${postData.title} - Camden's Blog`} />
+        <meta property="og:description" content={getMetadataSnippet(postData.plainText)} />
+        <meta property="og:url" content={`https://camdenmecklem.com/blog/${postData.path}/`} />
+        <meta property="og:image" content={postData.imageURL} />
+        <meta property="og:site_name" content="Camden's Blog" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="camdenmecklem.com" />
+        <meta property="twitter:url" content={`https://camdenmecklem.com/blog/${postData.path}/`} />
+        <meta name="twitter:title" content={`${postData.title} - Camden's Blog`} />
+        <meta name="twitter:description" content={getMetadataSnippet(postData.plainText)} />
+        <meta name="twitter:image" content={postData.imageURL} />
       </Head>
       <div className={styles.container}>
         <p className={styles.blogHeader}><Link href="/blog/"><a>Camden&apos;s Blog</a></Link></p>

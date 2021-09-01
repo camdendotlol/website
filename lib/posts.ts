@@ -5,6 +5,7 @@ import { remark } from 'remark'
 import highlight from 'remark-highlight.js'
 import html from 'remark-html'
 import imageSize from 'image-size'
+import strip from 'strip-markdown'
 
 const postsDirectory = path.join(process.cwd(), 'posts')
 const imageDirectory = path.join(process.cwd(), 'public')
@@ -79,9 +80,16 @@ export const getPostData = async (id: string) => {
   .use(highlight)
   .process(matterResult.content)
   const contentHtml = processedContent.toString()
-  
+
   // Replace my favorite punctuation mark with an em dash
   const finalContentHtml = contentHtml.replace(/ - /g, ' — ')
+
+  // Get plain text without any Markdown formatting for OpenGraph metadata
+  const plainTextQuery = await remark()
+  .use(strip)
+  .process(matterResult.content)
+
+  const plainText = plainTextQuery.toString()
 
   // Get dimensions so the post component can make room for the image before it loads
   const dimensions = imageSize(path.join(imageDirectory, matterResult.data.imageURL))
@@ -90,13 +98,15 @@ export const getPostData = async (id: string) => {
   return {
     id,
     contentHtml: finalContentHtml,
-    quote: quote,
+    plainText,
+    quote,
     date: matterResult.data.date,
     title: matterResult.data.title,
     imageURL: matterResult.data.imageURL,
     imageWidth: dimensions.width,
     imageHeight: dimensions.height,
     quoteType: matterResult.data.quoteType,
-    quoteAuthor: matterResult.data.quoteAuthor
+    quoteAuthor: matterResult.data.quoteAuthor,
+    path: id
   }
 }
