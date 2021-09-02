@@ -82,8 +82,6 @@
   margin-right: 5%;
   margin-left: 5%;
   font-weight: 600;
-  word-break: break-all;
-  overflow-wrap: break-word;
   padding: 2%;
   overflow: auto;
 }
