@@ -11,6 +11,7 @@ So you've made a nice React app with [react-router](https://www.npmjs.com/packag
 Your index page probably looks something like this:
 
 ```html
+<html>
 <head>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>My Website</title>
