@@ -2,9 +2,8 @@
 title: 'Introducing the Camden General License'
 date: '2021-05-29'
 imageURL: '/img/gavel.jpg'
-quote: "Once a thing has been done, the fool sees it."
-quoteType: 'poetry'
-quoteAuthor: 'Homer'
+quote: "You're not a real lawyer."
+quoteAuthor: 'Charles McGill'
 ---
 
 Today I am excited to announce the release of a new license for software, the Camden General License. The full text of this license will be provided momentarily, but I must first outline the backstory (in recipe website format) for why this license came into existence.

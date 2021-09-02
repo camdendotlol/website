@@ -1,21 +1,3 @@
-@font-face {
-  font-family: "Inter";
-  src: url("/fonts/Inter/Inter-Variable.ttf");
-  font-style: normal;
-  font-weight: 900;
-}
-
-@font-face {
-  font-family: "Newsreader";
-  src: url("/fonts/Newsreader/Newsreader.ttf");
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Anonymous Pro";
-  src: url("/fonts/Anonymous Pro/AnonymousPro-Regular.ttf")
-}
-
 .container {
   margin: 0 auto;
   width: 800px;
@@ -45,8 +27,9 @@
 }
 
 .title {
-  font-size: 5em;
+  font-size: 4em;
   font-family: "Newsreader";
+  font-weight: 900;
   margin-bottom: 0;
 }
 
@@ -60,14 +43,7 @@
   text-align: left;
 }
 
-.quoteTextProse {
-  font-size: 1.3em;
-  font-family: "Newsreader";
-  font-style: italic;
-  margin-bottom: 0;
-}
-
-.quoteTextPoetry {
+.quoteText {
   font-size: 1.3em;
   font-family: "Newsreader";
   font-style: italic;
@@ -98,13 +74,16 @@
 }
 
 .blogPostContent code {
-  font-family: "Anonymous Pro";
-  font-size: 0.8em;
+  font-family: "Ubuntu Mono";
+  font-size: 0.85em;
   line-height: 1.2em;
   display: block;
-  background: lightgray;
-  margin-right: 10%;
-  margin-left: 10%;
+  background: black;
+  margin-right: 5%;
+  margin-left: 5%;
+  font-weight: 600;
+  word-break: break-all;
+  overflow-wrap: break-word;
   padding: 2%;
   overflow: auto;
 }
@@ -160,6 +139,10 @@
   .postHeaderImg img {
     height: 300px;
   }
+
+  .title {
+    font-size: 3em;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -168,6 +151,6 @@
   }
 
   .title {
-    font-size: 3em;
+    font-size: 2em;
   }
 }

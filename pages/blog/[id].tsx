@@ -8,14 +8,13 @@ import { ParsedUrlQuery } from 'querystring'
 import styles from '../../styles/Blog.module.css'
 
 // Syntax highlighting CSS
-import 'highlight.js/styles/foundation.css'
+import 'highlight.js/styles/monokai.css'
 
 interface Props {
   postData: {
     title: string,
     date: string,
     quote: string,
-    quoteType: string,
     quoteAuthor: string,
     imageURL: string,
     imageWidth: number,
@@ -27,14 +26,6 @@ interface Props {
 }
 
 const Post: React.FC<Props> = ({ postData }) => {
-  const getTextStyle = () => {
-    if (postData.quoteType === 'poetry') {
-      return styles.quoteTextPoetry
-    } else {
-      return styles.quoteTextProse
-    }
-  }
-
   const getMetadataSnippet = (text: string): string => {
     if (text.length < 200) {
       return text
@@ -69,7 +60,7 @@ const Post: React.FC<Props> = ({ postData }) => {
           <Image width={postData.imageWidth} height={postData.imageHeight} className={styles.postHeaderImg} src={postData.imageURL} alt='' />
         </div>
         <div className={styles.quoteBox}>
-          <p className={getTextStyle()}>{postData.quote}</p>
+          <p className={styles.quoteText}>{postData.quote}</p>
           <p className={styles.quoteAuthor}>&#8212; {postData.quoteAuthor}</p>
         </div>
         <p>&#167;</p>

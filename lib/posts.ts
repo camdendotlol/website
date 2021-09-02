@@ -1,9 +1,13 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { unified } from 'unified'
 import { remark } from 'remark'
-import highlight from 'remark-highlight.js'
-import html from 'remark-html'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import rehypeStringify from 'rehype-stringify'
+import rehypeHighlight from 'rehype-highlight'
+import rehypeRaw from 'rehype-raw'
 import imageSize from 'image-size'
 import strip from 'strip-markdown'
 
@@ -39,7 +43,6 @@ export const getSortedPostsData = () => {
       imageURL: matterResult.data.imageURL,
       imageWidth: dimensions.width,
       imageHeight: dimensions.height,
-      quoteType: matterResult.data.quoteType,
       quoteAuthor: matterResult.data.quoteAuthor
     }
   })
@@ -75,10 +78,14 @@ export const getPostData = async (id: string) => {
   let quote = matterResult.data.quote.replace(/\//g, '\n')
   
   // Use remark to convert markdown into HTML string
-  const processedContent = await remark()
-  .use(html)
-  .use(highlight)
-  .process(matterResult.content)
+  const processedContent = await unified()
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(rehypeRaw)
+    .use(rehypeHighlight)
+    .use(rehypeStringify)
+    .process(matterResult.content)
+
   const contentHtml = processedContent.toString()
 
   // Replace my favorite punctuation mark with an em dash
@@ -105,7 +112,6 @@ export const getPostData = async (id: string) => {
     imageURL: matterResult.data.imageURL,
     imageWidth: dimensions.width,
     imageHeight: dimensions.height,
-    quoteType: matterResult.data.quoteType,
     quoteAuthor: matterResult.data.quoteAuthor,
     path: id
   }
