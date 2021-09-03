@@ -138,6 +138,16 @@
   color: #ff7f50;
 }
 
+@media screen and (max-width: 1400px) {
+  .postHeaderImg img {
+    height: 400px;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .container {
     width: calc(100vw - 20px);
@@ -148,16 +158,16 @@
   }
 
   .title {
-    font-size: 3em;
+    font-size: 3rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .blogPostContent {
-    font-size: 1.2em;
+    font-size: 1.2rem;
   }
 
   .title {
-    font-size: 2em;
+    font-size: 2rem;
   }
 }
