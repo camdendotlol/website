@@ -6,7 +6,7 @@ quote: "To a collector of curios, the dust is metadata."
 quoteAuthor: 'David Weinberger'
 ---
 
-So you've made a nice React app with [react-router](https://www.npmjs.com/package/react-router) and an Express backend, and you've set up the server so it redirects all requests to index.html. The index page just has a few lines that tell the browser to load a JavaScript bundle, your actual app. From there, react-router looks at the specific path and decides which part of your app to display. Maybe you're even using [React Helmet](https://www.npmjs.com/package/react-helmet) to change the page title in the browser each time the user opens a new part of your app.
+So you've made a nice React app with [React Router](https://www.npmjs.com/package/react-router) and an Express backend, and you've set up the server so it redirects all requests to `index.html`. The index page just has a few lines that tell the browser to load your actual app as a JavaScript bundle. From there, React Router looks at the specific path and decides which part of your app to display. Maybe you're even using [React Helmet](https://www.npmjs.com/package/react-helmet) to change the page title in the browser each time the user opens a new part of your app.
 
 Your index page probably looks something like this:
 
@@ -29,13 +29,13 @@ Your index page probably looks something like this:
 </html>
 ```
 
-But there's a problem. This HTML file is totally generic, always the same regardless of whether the user navigates to your homepage or something deep within your site. So when a service like Facebook loads a link preview, the meta tags such as "title" and "description" will always be the same. Even if you use React Helmet to fill them out on the client side, search engines and preview services don't download your JavaScript bundle - they just go with what the original meta tags say.
+But there's a problem. This file is totally generic, always the same regardless of whether the user navigates to your homepage or something deep within your site. So when a service like Facebook loads a link preview, the meta tags such as `title` and `description` will always be the same. Even if you use React Helmet to fill them out in the client, search engines and social media sites don't download your JavaScript bundle - they just go with what the original meta tags say.
 
-The main way to avoid this issue is by using server-side rendering, where the server renders the page into plain HTML and sends that to the browser. Server-side rendering is cool (and it's probably the future of web apps), but there's no need to make such a huge change to your existing codebase.
+The main way to avoid this issue is by using **server-side rendering**, where the server renders the page into plain HTML and sends that to the browser. Server-side rendering is cool (and it's probably the future of web apps), but there's no need to make such a huge change to your existing codebase.
 
-The trick we're going to use could technically be considered a form of server-side rendering, but it's not the full-scale SSR that developers are talking about when they use the term. We're going to peek into index.html and **change the metadata properties depending on the path of the request**.
+The trick we're going to use could technically be considered a form of server-side rendering, but it's not the full-scale SSR that developers are talking about when they use the term. We're going to peek into `index.html` and **change the metadata properties depending on the path of the request**.
 
-To start, let's set up a simple template system for metadata. Anything in {brackets} will be changed before sending index.html to the client. There's no specific reason to use brackets here, you can use whatever symbol you want as long as it doesn't interfere with typical HTML formatting.
+To start, let's set up a simple template system for metadata. Anything in `{brackets}` will be changed before sending `index.html` to the client. There's no specific reason to use brackets here, you can use whatever symbol you want as long as it doesn't interfere with typical HTML formatting.
 
 ```html
 <head>
@@ -50,9 +50,9 @@ To start, let's set up a simple template system for metadata. Anything in {brack
 
 So how will we replace them on every request?
 
-Your server is probably sending index.html directly from the disk. We're going to change that.
+Your server is probably sending `index.html` directly from the disk. We're going to change that.
 
-First, let's load index.html into a **string** that sits in memory:
+First, let's load `index.html` into a **string** that sits in memory:
 
 ```ts
 // path to wherever you keep index.html
@@ -61,7 +61,7 @@ const staticFolder = path.join(__dirname, '..', 'frontend')
 const indexPage = fs.readFileSync(`${staticFolder}/index.html`, 'utf8')
 ```
 
-Now we're going to tinker with the index.html string each time it's requested. In your server's default path handler, add the following:
+Now we're going to tinker with the `indexPage` string each time it's requested. In your server's default path handler, add the following:
 
 ```ts
 // We'll write the getMetadata function next
@@ -73,7 +73,7 @@ app.get('/*', async (req, res) => {
 })
 ```
 
-Since I'm using TypeScript, I'm going to create an interface to keep track of the metadata I need. If you're not using TypeScript, make sure to remember which properties you put into brackets in your index.html!
+Since I'm using TypeScript, I'm going to create an interface to keep track of the metadata I need. If you're not using TypeScript, make sure to remember which properties you put into brackets in `index.html`!
 
 ```ts
 interface Metadata {
@@ -82,7 +82,7 @@ interface Metadata {
 }
 ```
 
-Now let's write a function called getMetadata that handles all metadata-related operations and then returns the properly-populated index.html.
+Now let's write a function called `getMetadata`, which will handle all metadata-related operations and then return the properly-populated `indexPage`.
 
 This is an abridged version of what I use in Chromapoll, one of my personal projects.
 
@@ -113,9 +113,9 @@ const getMetadata = (path: string, indexPage: string): string => {
 }
 ```
 
-Now we have the important parts down. Ideally, getMetadata should be placed as a default export in its own module, such as metadata.ts in your server's root directory, with any associated functions residing there as private, non-exported functions.
+Now we have the important parts down. Ideally, `getMetadata` should be placed as a default export in its own module, such as `metadata.ts` in your server's root directory, with any associated functions residing there as private, non-exported functions.
 
-For actually replacing the {bracket} placeholders from our index template, we can just use the [String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) method. There's a small hitch, though: just calling whatever.replace(x, y) will only replace the **first** instance of x.
+For actually replacing the `{bracket}` placeholders from our index template, we can just use the [String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) method. There's a small hitch, though: just calling `whatever.replace(x, y)` will only replace the **first** instance of `x`.
 
 Your index template probably uses multiple copies of the same metadata for different sites, such as:
 
@@ -143,9 +143,9 @@ We need to do this:
 indexPage.replace(/{title}/g, metadata.title)
 ```
 
-We can chain replace calls together as many times as we want. It's important to note that the replace method **does not modify the original string**, it just returns a new one. As a result, we can rely on the indexPage variable being a constant that is never modified.
+We can chain replace calls together as many times as we want. It's important to note that the replace method **does not modify the original string**, it just returns a new one. As a result, we can rely on `indexPage` being a constant that is never modified.
 
-So our final insertMetadata function looks like:
+So our final `insertMetadata` function looks like:
 
 ```ts
 const insertMetadata = (indexPage: string, metadata: Metadata): string => {
@@ -159,10 +159,10 @@ That's it! If you check out your site in an OpenGraph previewer, you should see 
 
 ## Closing thoughts and where to go next
 
-You'll probably need more metadata than just title and description, such as image, url, locale, site_name, and [many more](https://ogp.me/). This approach is nice because you have the foundation to add whatever custom content you want.
+You'll probably need more metadata than just title and description, such as `image`, `url`, `locale`, `site_name`, and [many more](https://ogp.me/). This approach is nice because you have the foundation to add whatever custom content you want.
 
-For example, Chromapoll users can create polls, which are available at the /polls/id path. To properly show their information in the metadata, I needed to add a call to the database to fetch the title and other information. So I created an asynchronous "fetchPollInfo" function that getMetadata calls when it's provided with a path that begins with /poll/. All of this logic sits in the metadata.ts module, safely separated from the rest of the codebase.
+For example, Chromapoll users can create polls, which are available at the `/polls/id` path. To properly show their information in the metadata, I needed to add a call to the database to fetch the title and other information. So I created an asynchronous `fetchPollInfo` function that `getMetadata` calls when it's provided with a path that begins with `/poll/`. All of this logic sits in the `metadata.ts` module, safely separated from the rest of the codebase.
 
-OpenGraph previews look a lot nicer with images. Flavio Copes has [a great tutorial on using Canvas to create custom images on the fly](https://flaviocopes.com/canvas-node-generate-image/). Using information from that page, I wrote a function that generates an image with custom text and coloring for poll pages, and I call it each time there's a request to a poll page. If your site is more static, you can just keep a few images in a folder and serve different ones depending on the path.
+OpenGraph previews look a lot nicer with images. Flavio Copes has [a useful tutorial on creating custom images at runtime with Canvas](https://flaviocopes.com/canvas-node-generate-image/). Using information from that page alongside the [MDN Canvas API Docs](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API), I wrote a function that generates an image with custom text and coloring for poll pages, and I call it each time there's a request to a poll page. If your site is more static, you can just keep a few images in a folder and serve different ones depending on the path.
 
 You can check out my complete implementation for Chromapoll [here](https://github.com/mythmakerseven/chromapoll/blob/main/server/metadata.ts).

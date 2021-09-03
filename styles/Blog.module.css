@@ -73,18 +73,27 @@
   margin: 0.13em 0.1em 0 0;
 }
 
+/* Code blocks are wrapped in a <pre /> element. */
+/* Inline code is not. So we can tell the difference */
+/* and style them accordingly. */
 .blogPostContent code {
   font-family: "Ubuntu Mono";
   font-size: 0.85em;
-  line-height: 1.2em;
+  background: #d3d3d3;
+  border-radius: 4px;
+  padding: 0.2rem;
+}
+
+.blogPostContent pre code {
   display: block;
-  background: black;
+  background: #191919;
+  line-height: 1.2em;
   margin-right: 5%;
   margin-left: 5%;
   font-weight: 600;
-  padding: 2%;
   overflow: auto;
 }
+
 
 .subtitle {
   font-size: 3em;
