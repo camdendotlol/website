@@ -3,8 +3,8 @@
 }
 
 .largePostbox {
-  width: 40vw;
-  height: 25vw;
+  width: 800px;
+  height: 500px;
   margin: 0 auto;
   margin-bottom: 20px;
   background-size: cover;
@@ -12,26 +12,24 @@
   background-position: center center;
   display: flex;
   align-items: center;
-  font-size: 1.5em;
-  border-radius: 1.5%;
+  font-size: 1.5rem;
+  border-radius: 10px;
   transition: 0.2s;
 }
 
 .smallPostbox {
   color: #f6f6f6;
-  width: 15vw;
-  height: 15vw;
-  min-width: 200px;
-  min-height: 200px;
+  width: 360px;
+  height: 360px;
   margin: 0 auto;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   display: flex;
   align-items: center;
-  border-radius: 5%;
+  border-radius: 10px;
   transition: 0.2s;
-  font-size: 1em;
+  font-size: 1.3rem;
 }
 
 .largePostbox:hover, .largePostbox:focus, .smallPostbox:hover, .smallPostbox:focus {
@@ -49,29 +47,27 @@
   color: white;
   background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
-  padding: 2vw;
+  padding: 1rem;
   transition: 0.2s;
 }
 
 @media screen and (max-width: 1400px) {
-  .postbox {
-    width: 60vw;
-    height: 40vw;
+  .largePostbox {
+    width: 580px;
+    height: 375px;
+    font-size: 1.3rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .largePostbox {
     width: 90vw;
-    height: 60vw;
+    height: 300px;
     padding: 0;
   }
 
   .smallPostbox {
-    width: 60vw;
-  }
-
-  .postboxContent {
-    font-size: 0.8em;
+    width: 80vw;
+    height: 260px;
   }
 }
