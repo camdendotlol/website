@@ -47,39 +47,38 @@ export const Home: React.FC<Props> = ({ postsData }) => {
         <meta name="twitter:title" content="Camden Mecklem" />
         <meta name="twitter:description" content="Camden Mecklem is a web developer in the Cincinnati area." />
       </Head>
-      <video className={styles.video} preload="auto" playsInline autoPlay muted loop id="bgvid">
-        <source src="/vid/space.mp4" type="video/mp4" />
-      </video>
       <main>
-        <div className={`${styles.containerWithBgVideo} ${styles.container}`}>
-          <h1 className={styles.title}>
-            My name is Camden.
-          </h1>
-          <ul className={styles.nav}>
-            <li
-              id={styles.portfolioNav}
-              onClick={() => scrollToRef(portfolioRef)}
-            >
-              <button>
-                <span>Portfolio</span>
-              </button>
-            </li>
-            <li
-              id={styles.blogNav}
-              onClick={() => scrollToRef(blogRef)}
-            >
-              <button>
-                <span>Blog</span>
-              </button>
-            </li>
-            <li
-              onClick={() => window.location.href='/resume.pdf'}
-            >
-              <button>
-                <span>Resume</span>
-              </button>
-            </li>
-          </ul>
+        <div className={`${styles.container} ${styles.helloContainer}`}>
+          <div className={styles.helloDiv}>
+            <h1 className={styles.title}>
+              My name is Camden.
+            </h1>
+            <ul className={styles.nav}>
+              <li
+                id={styles.portfolioNav}
+                onClick={() => scrollToRef(portfolioRef)}
+              >
+                <button>
+                  <span>Portfolio</span>
+                </button>
+              </li>
+              <li
+                id={styles.blogNav}
+                onClick={() => scrollToRef(blogRef)}
+              >
+                <button>
+                  <span>Blog</span>
+                </button>
+              </li>
+              <li
+                onClick={() => window.location.href='/resume.pdf'}
+              >
+                <button>
+                  <span>Resume</span>
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
         <div className={styles.container} id='portfolio-container' ref={portfolioRef}>
           <div>
@@ -112,11 +111,7 @@ export const Home: React.FC<Props> = ({ postsData }) => {
       </main>
       <footer className={styles.footer}>
         <p>
-          &copy; 2021 Camden Mecklem.
-          <br />
-          Header video from by the <a href="https://hubblesite.org/video/3/science">Space Telescope Science Institute</a> under CC BY-NC-SA 4.0.
-          <br />
-          Website made with <a href='https://nextjs.org/'>Next.js</a>
+          𒁲𒈠𒃶𒈨𒂗
         </p>
       </footer>
     </div>
