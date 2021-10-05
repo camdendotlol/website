@@ -106,13 +106,13 @@
 
 .forwardCard {
   animation: slide-in-backward;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .backwardCard {
   animation: slide-in-forward;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
