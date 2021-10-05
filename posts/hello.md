@@ -8,7 +8,7 @@ quoteAuthor: 'Phoebe Bridgers'
 
 Welcome to my new website. This is the first site I've made with Next.js, and I made it in a few days after bootstrapping with the [official Next.js tutorial](https://nextjs.org/learn/basics/create-nextjs-app) as starter code. The code is pretty sloppy with quite a few DRY violations and redundant CSS.
 
-(Note: Some of the design choices described below are outdated after later updates.)
+(Note: I've redesigned this website in October 2021. Most of the below information is outdated. For one thing, I've cleaned up the code pretty well since writing this.)
 
 I had some misgivings about using a full SPA suite [for reasons of performance and loading speed](https://danluu.com/web-bloat/). Next.js almost seems like a parody of web development trends - a framework on top of React, which is itself a massive framework that swells your modules folder to thousands of files on a fresh install. That said, if you're going to go the maximalist route, you might as well go [all the way](https://en.wikipedia.org/wiki/Gravity%27s_Rainbow). Since part of this site's audience is potential employers, the wow factor is useful. So anyway, that's why the homepage loads a 2.9MB video.
 

@@ -6,6 +6,7 @@ import { GetStaticProps } from 'next'
 import Portfolio from '../components/portfolio'
 import { useRef } from 'react'
 import PostBox, { boxSize } from '../components/postbox'
+import { getPortfolio } from '../lib/portfolio'
 
 interface PostsData {
   date: string,
@@ -14,16 +15,26 @@ interface PostsData {
   imageURL: string
 }
 
-interface Props {
-  postsData: PostsData[]
+export interface PortfolioData {
+  title: string,
+  image: string,
+  technologies: string[],
+  description: string,
+  url: string,
+  github: string
 }
 
-export const Home: React.FC<Props> = ({ postsData }) => {
+interface Props {
+  postsData: PostsData[],
+  portfolioData: PortfolioData[]
+}
+
+export const Home: React.FC<Props> = ({ portfolioData, postsData }) => {
   const portfolioRef = useRef<HTMLInputElement>(null)
   const blogRef = useRef<HTMLInputElement>(null)
 
   const scrollToRef = (ref: any) => ref?.current?.scrollIntoView({ behavior: 'smooth' })
-
+  
   return (
     <div>
       <style jsx global>{`
@@ -81,15 +92,10 @@ export const Home: React.FC<Props> = ({ postsData }) => {
           </div>
         </div>
         <div className={styles.container} id='portfolio-container' ref={portfolioRef}>
-          <div>
-            <h1 className={styles.title}>
-              I create websites.
-            </h1>
-            <Portfolio />
-          </div>
+          <Portfolio portfolioData={portfolioData} />
         </div>
         <div className={styles.container} id={styles.blogContainer} ref={blogRef}>
-          <h1 className={styles.blogHeader}>
+          <h1 className={styles.title}>
             I also write a blog.
           </h1>
           {/* <img id={styles.blogImg} src="/img/alexandria.jpg" alt="" /> */}
@@ -111,6 +117,9 @@ export const Home: React.FC<Props> = ({ postsData }) => {
       </main>
       <footer className={styles.footer}>
         <p>
+          cover photo from <a href="https://unsplash.com/photos/KX6ECaHP6wQ">eberhard 🖐 grossgasteiger on Unsplash</a>
+        </p>
+        <p>
           𒁲𒈠𒃶𒈨𒂗
         </p>
       </footer>
@@ -119,9 +128,11 @@ export const Home: React.FC<Props> = ({ postsData }) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
+  const portfolioData = getPortfolio()
   const postsData = getSortedPostsData()
   return {
     props: {
+      portfolioData,
       postsData
     }
   }
