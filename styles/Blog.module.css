@@ -94,10 +94,9 @@
   overflow: auto;
 }
 
-
 .subtitle {
   font-size: 3em;
-  font-family: "Inter";
+  font-family: sans-serif;
 }
 
 .homepageLink {
