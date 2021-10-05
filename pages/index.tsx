@@ -50,7 +50,9 @@ export const Home: React.FC<Props> = ({ portfolioData, postsData }) => {
         <meta property="og:title" content="Camden Mecklem" />
         <meta property="og:description" content="Camden Mecklem is a web developer in the Cincinnati area." />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="/img/camdenmecklem.png" />
         <meta property="og:url" content="https://camdenmecklem.com" />
+        <meta property="og:site_name" content="Camden Mecklem" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="camdenmecklem.com" />
