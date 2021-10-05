@@ -1,7 +1,7 @@
 ---
 title: 'Groupread'
 image: '/img/groupread.png'
-technologies: ['React', 'Node', 'Express', 'Redux', 'Jest', 'Cypress']
+technologies: ['React', 'Node', 'Express', 'Redux', 'Jest', 'Cypress', 'Bulma CSS']
 url: 'https://gr.camdenmecklem.com/'
 date: '2021-07-01'
 github: 'https://github.com/mythmakerseven/groupread'

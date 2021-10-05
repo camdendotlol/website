@@ -1,7 +1,7 @@
 ---
 title: 'Kauthar Marlie'
 image: '/img/kauthar.png'
-technologies: ['JavaScript']
+technologies: ['JavaScript', 'CSS']
 url: 'https://iamkauthar.work/'
 date: '2021-01-01'
 github: 'https://github.com/mythmakerseven/kautharpersonalsite'
