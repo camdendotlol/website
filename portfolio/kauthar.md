@@ -1,6 +1,6 @@
 ---
 title: 'Kauthar Marlie'
-image: '/img/kauthar.png'
+image: '/img/kauthar.jpg'
 technologies: ['JavaScript', 'CSS']
 url: 'https://iamkauthar.work/'
 date: '2021-01-01'

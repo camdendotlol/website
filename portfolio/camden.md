@@ -1,6 +1,6 @@
 ---
 title: 'Camden Mecklem'
-image: '/img/camdenmecklem.png'
+image: '/img/camdenmecklem.jpg'
 technologies: ['NextJS', 'React']
 url: 'https://camdenmecklem.com/'
 date: '2021-05-01'

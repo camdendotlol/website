@@ -1,6 +1,6 @@
 ---
 title: 'Linear A'
-image: '/img/lineara.png'
+image: '/img/lineara.jpg'
 technologies: ['React', 'Bulma CSS']
 url: 'https://la.camdenmecklem.com/'
 date: '2021-02-01'

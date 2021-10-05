@@ -1,6 +1,6 @@
 ---
 title: 'Groupread'
-image: '/img/groupread.png'
+image: '/img/groupread.jpg'
 technologies: ['React', 'Node', 'Express', 'Redux', 'Jest', 'Cypress', 'Bulma CSS']
 url: 'https://gr.camdenmecklem.com/'
 date: '2021-07-01'

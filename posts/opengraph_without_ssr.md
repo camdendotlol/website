@@ -1,7 +1,7 @@
 ---
 title: 'Displaying OpenGraph Metadata for a React App Without Serverside Rendering'
 date: '2021-09-02'
-imageURL: '/img/card_catalog.png'
+imageURL: '/img/card_catalog.jpg'
 quote: "To a collector of curios, the dust is metadata."
 quoteAuthor: 'David Weinberger'
 ---
