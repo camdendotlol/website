@@ -42,6 +42,7 @@
 .arrow {
   height: 60px;
   width: 60px;
+  color: #202020;
 }
 
 @keyframes slide-in-forward {
@@ -189,7 +190,7 @@
   }
 
   .portfolioCard {
-    width: 85vw;
+    width: 90vw;
     margin-top: 10px;
     margin-bottom: 10px;
   }

@@ -22,13 +22,13 @@
     "rehype-raw": "^6.1.0",
     "remark": "^14.0.1",
     "remark-highlight.js": "^7.0.1",
-    "remark-rehype": "^9.1.0",
+    "remark-rehype": "^10.0.0",
     "strip-markdown": "^5.0.0",
     "unified": "^10.1.0"
   },
   "devDependencies": {
-    "@types/node": "^16.10.1",
-    "@types/react": "^17.0.23",
+    "@types/node": "^16.10.2",
+    "@types/react": "^17.0.27",
     "eslint": "^7.32.0",
     "eslint-config-next": "^11.1.0",
     "typescript": "^4.4.3"
