@@ -7,14 +7,12 @@
   height: 500px;
   margin: 0 auto;
   margin-bottom: 20px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
   display: flex;
   align-items: center;
   font-size: 1.5rem;
   border-radius: 10px;
   transition: 0.2s;
+  position: relative;
 }
 
 .smallPostbox {
@@ -22,14 +20,12 @@
   width: 360px;
   height: 360px;
   margin: 0 auto;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
   display: flex;
   align-items: center;
   border-radius: 10px;
   transition: 0.2s;
   font-size: 1.3rem;
+  position: relative;
 }
 
 .largePostbox:hover, .largePostbox:focus, .smallPostbox:hover, .smallPostbox:focus {
@@ -43,12 +39,20 @@
   color: #ff7f50;
 }
 
+.backgroundImage {
+  z-index: 0;
+  height: 100px;
+  position: relative;
+  border-radius: 10px;
+}
+
 .postboxContent {
   color: white;
   background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
   padding: 1rem;
   transition: 0.2s;
+  z-index: 1;
 }
 
 .postboxContent p {
