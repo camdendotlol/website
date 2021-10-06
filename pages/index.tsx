@@ -7,6 +7,7 @@ import Portfolio from '../components/portfolio'
 import { useRef } from 'react'
 import PostBox, { boxSize } from '../components/postbox'
 import { getPortfolio } from '../lib/portfolio'
+import getSeasonalTheme from '../lib/seasons'
 
 interface PostsData {
   date: string,
@@ -34,7 +35,9 @@ export const Home: React.FC<Props> = ({ portfolioData, postsData }) => {
   const blogRef = useRef<HTMLInputElement>(null)
 
   const scrollToRef = (ref: any) => ref?.current?.scrollIntoView({ behavior: 'smooth' })
-  
+
+  const seasonalStyle = getSeasonalTheme()
+ 
   return (
     <div>
       <style jsx global>{`
@@ -61,9 +64,9 @@ export const Home: React.FC<Props> = ({ portfolioData, postsData }) => {
         <meta name="twitter:description" content="Camden Mecklem is a web developer in the Cincinnati area." />
       </Head>
       <main>
-        <div className={`${styles.container} ${styles.helloContainer}`}>
+        <div className={`${styles.container} ${styles.helloContainer} ${seasonalStyle.background}`}>
           <div className={styles.helloDiv}>
-            <h1 className={styles.title}>
+            <h1 className={`${styles.title} ${seasonalStyle.textColor}`}>
               My name is Camden.
             </h1>
             <ul className={styles.nav}>
@@ -71,7 +74,7 @@ export const Home: React.FC<Props> = ({ portfolioData, postsData }) => {
                 id={styles.portfolioNav}
                 onClick={() => scrollToRef(portfolioRef)}
               >
-                <button>
+                <button className={seasonalStyle.backgroundColor}>
                   <span>Portfolio</span>
                 </button>
               </li>
@@ -79,14 +82,14 @@ export const Home: React.FC<Props> = ({ portfolioData, postsData }) => {
                 id={styles.blogNav}
                 onClick={() => scrollToRef(blogRef)}
               >
-                <button>
+                <button className={seasonalStyle.backgroundColor}>
                   <span>Blog</span>
                 </button>
               </li>
               <li
                 onClick={() => window.location.href='/resume.pdf'}
-              >
-                <button>
+                >
+                <button className={seasonalStyle.backgroundColor}>
                   <span>Resume</span>
                 </button>
               </li>
@@ -94,7 +97,10 @@ export const Home: React.FC<Props> = ({ portfolioData, postsData }) => {
           </div>
         </div>
         <div className={styles.container} id='portfolio-container' ref={portfolioRef}>
-          <Portfolio portfolioData={portfolioData} />
+          <Portfolio
+            portfolioData={portfolioData}
+            seasonalTheme={seasonalStyle}
+          />
         </div>
         <div className={styles.container} id={styles.blogContainer} ref={blogRef}>
           <h1 className={styles.title}>
@@ -118,9 +124,7 @@ export const Home: React.FC<Props> = ({ portfolioData, postsData }) => {
         </div>
       </main>
       <footer className={styles.footer}>
-        <p>
-          cover photo from <a href="https://unsplash.com/photos/KX6ECaHP6wQ">eberhard 🖐 grossgasteiger on Unsplash</a>
-        </p>
+        <div dangerouslySetInnerHTML={{ __html: seasonalStyle.credit }}></div>
         <p>
           𒁲𒈠𒃶𒈨𒂗
         </p>

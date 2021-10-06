@@ -14,13 +14,60 @@
   content: "";
   position: absolute;
   top: 0; left: 0;
-  background-image: url("/img/eberhard-grossgasteiger-KX6ECaHP6wQ-unsplash.jpg");
   width: 100%;
   height: 100%;
   background-color: #000000;
   background-repeat: no-repeat;
   background-size: cover;
   filter: brightness(60%);
+}
+
+.fallBackgroundContainer::before {
+  background-image: url("/img/eberhard-grossgasteiger-KX6ECaHP6wQ-unsplash.jpg");
+}
+
+.fallText {
+  color: var(--fallColor);
+}
+
+.fallBackground {
+  background: var(--fallColor);
+}
+
+.winterBackgroundContainer::before {
+  background-image: url("/img/atle-mo-X9QnU-h3X_8-unsplash.jpg");
+}
+
+.winterText {
+  color: var(--winterColor)
+}
+
+.winterBackground {
+  background: var(--winterColor)
+}
+
+.springBackgroundContainer::before {
+  background-image: url("/img/ruby-doan-BrFuaOEfxCk-unsplash.jpg");
+}
+
+.springText {
+  color: var(--springColor)
+}
+
+.springBackground {
+  background: var(--springColor)
+}
+
+.summerBackgroundContainer::before {
+  background-image: url("/img/jared-verdi-PNKwdJ8WetM-unsplash.jpg");
+}
+
+.summerText {
+  color: var(--summerColor)
+}
+
+.summerBackground {
+  background: var(--summerColor)
 }
 
 .helloDiv {
@@ -31,7 +78,6 @@
 }
 
 .helloContainer .title {
-  color: #ff5429;
   text-shadow: black 2px 1px;
 }
 
@@ -57,7 +103,6 @@
   border: none;
   border-radius: 10px;
   color: #e9e9e9;
-  background: #ff5429;
   transition: 0.2s;
   display: flex;
 }
@@ -123,10 +168,6 @@
   transition: 0.2s;
 }
 
-.blogSeeMore:hover, .blogSeeMore:focus {
-  color: #ff7f50;
-}
-
 .footer {
   text-align: center;
   background: #f6f6f6;
@@ -140,7 +181,6 @@
 }
 
 .footer a:hover {
-  color: #ff5429;
   text-decoration: underline;
 }
 

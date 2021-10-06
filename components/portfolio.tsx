@@ -8,9 +8,11 @@ import {
   Github,
   Wifi
 } from 'react-bootstrap-icons'
+import { SeasonalTheme } from '../lib/seasons'
 
 interface Props {
-  portfolioData: PortfolioData[]
+  portfolioData: PortfolioData[],
+  seasonalTheme: SeasonalTheme
 }
 
 enum WhichWay {
@@ -18,7 +20,7 @@ enum WhichWay {
   Decrement
 }
 
-const Portfolio: React.FC<Props> = ({ portfolioData }) => {
+const Portfolio: React.FC<Props> = ({ portfolioData, seasonalTheme }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0)
   const [animation, setAnimation] = useState<WhichWay>(WhichWay.Increment)
 
@@ -76,7 +78,7 @@ const Portfolio: React.FC<Props> = ({ portfolioData }) => {
         return (
           <div
             key={index}
-            className={getCardClass(index)}
+            className={`${getCardClass(index)} ${seasonalTheme.backgroundColor}`}
           >
             <h1 className={styles.itemHeader}>{item.title}</h1>
             <div className={styles.portfolioFlex}>

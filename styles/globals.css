@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@400;700;800&family=Calistoga&family=Ubuntu+Mono&display=swap');
 
-html,
+body {
+  /* init seasonal variables */
+  /* might refactor these to the globals file at some point */
+  --fallColor: #ff5429;
+  --winterColor: #8ab0d6;
+  --springColor: #df89e7;
+  --summerColor: #acac51;
+}
+
+html, 
 body {
   padding: 0;
   margin: 0;
