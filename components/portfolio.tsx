@@ -68,6 +68,8 @@ const Portfolio: React.FC<Props> = ({ portfolioData, seasonalTheme }) => {
       <button
         type='button'
         id={styles.leftArrow}
+        name='previous-project'
+        aria-label='previous-project'
         onClick={() => getNextItem(WhichWay.Decrement)}
       >
         <ArrowLeftCircleFill
@@ -121,6 +123,8 @@ const Portfolio: React.FC<Props> = ({ portfolioData, seasonalTheme }) => {
       <button
         type='button'
         id={styles.rightArrow}
+        name='next-project'
+        aria-label='next-project'
         onClick={() => getNextItem(WhichWay.Increment)}
       >
         <ArrowRightCircleFill

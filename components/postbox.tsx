@@ -31,9 +31,9 @@ const PostBox: React.FC<Props> = ({ postData, size }) => {
             }
           </style>
           <div className={styles.postboxContent}>
-            <h3>
+            <p>
                 {postData.title}
-            </h3>
+            </p>
             <small>
               <Date dateString={postData.date} />
             </small>
