@@ -4,9 +4,9 @@ body {
   /* init seasonal variables */
   /* might refactor these to the globals file at some point */
   --fallColor: #ff5429;
-  --winterColor: #64bbc7;
+  --winterColor: #59dbca;
   --springColor: #df89e7;
-  --summerColor: #d6d634;
+  --summerColor: #ecd137;
 }
 
 html, 

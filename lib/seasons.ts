@@ -38,7 +38,7 @@ const getSeasonalTheme = (): SeasonalTheme => {
         background: styles.springBackgroundContainer,
         credit:
           `<p>
-            cover photo from <a href = "https://unsplash.com/photos/BrFuaOEfxCk">Ruby Doan on Unsplash</ a >
+            cover photo from <a href = "https://unsplash.com/photos/BrFuaOEfxCk">Ruby Doan on Unsplash</a>
           </p>`
         ,
         textColor: styles.springText,
@@ -49,14 +49,13 @@ const getSeasonalTheme = (): SeasonalTheme => {
         background: styles.summerBackgroundContainer,
         credit:
           `<p>
-            cover photo from <a href = "https://unsplash.com/photos/PNKwdJ8WetM">Jared Verdi on Unsplash</ a >
+            cover photo from <a href = "https://unsplash.com/photos/PNKwdJ8WetM">Jared Verdi on Unsplash</a>
           </p>`
         ,
         textColor: styles.summerText,
         backgroundColor: styles.summerBackground
       }
     case 3:
-      // The default should never fire, but if it does, fall is my favorite season.
       return {
         background: styles.fallBackgroundContainer,
         credit:
@@ -72,7 +71,7 @@ const getSeasonalTheme = (): SeasonalTheme => {
         background: styles.winterBackgroundContainer,
         credit:
           `<p>
-            cover photo from <a href = "https://unsplash.com/photos/X9QnU-h3X_8">Atle Mo on Unsplash</ a >
+            cover photo from <a href = "https://unsplash.com/photos/X9QnU-h3X_8">Atle Mo on Unsplash</a>
           </p>`
         ,
         textColor: styles.winterText,
