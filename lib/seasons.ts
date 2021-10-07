@@ -35,7 +35,7 @@ const getSeasonalTheme = (): SeasonalTheme => {
   switch(index) {
     case 1:
       return {
-        background: styles.springBackgroundContainer,
+        background: '/img/ruby-doan-BrFuaOEfxCk-unsplash.jpg',
         credit:
           `<p>
             cover photo from <a href = "https://unsplash.com/photos/BrFuaOEfxCk">Ruby Doan on Unsplash</a>
@@ -46,7 +46,7 @@ const getSeasonalTheme = (): SeasonalTheme => {
       }
     case 2:
       return {
-        background: styles.summerBackgroundContainer,
+        background: '/img/jared-verdi-PNKwdJ8WetM-unsplash.jpg',
         credit:
           `<p>
             cover photo from <a href = "https://unsplash.com/photos/PNKwdJ8WetM">Jared Verdi on Unsplash</a>
@@ -57,7 +57,7 @@ const getSeasonalTheme = (): SeasonalTheme => {
       }
     case 3:
       return {
-        background: styles.fallBackgroundContainer,
+        background: '/img/eberhard-grossgasteiger-KX6ECaHP6wQ-unsplash.jpg',
         credit:
           `<p>
             cover photo from <a href="https://unsplash.com/photos/KX6ECaHP6wQ">eberhard 🖐 grossgasteiger on Unsplash</a>
@@ -68,7 +68,7 @@ const getSeasonalTheme = (): SeasonalTheme => {
       }
     default:
       return {
-        background: styles.winterBackgroundContainer,
+        background: '/img/atle-mo-X9QnU-h3X_8-unsplash.jpg',
         credit:
           `<p>
             cover photo from <a href = "https://unsplash.com/photos/X9QnU-h3X_8">Atle Mo on Unsplash</a>

@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import { getSortedPostsData } from '../lib/posts'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
@@ -65,6 +66,15 @@ export const Home: React.FC<Props> = ({ portfolioData, postsData }) => {
       </Head>
       <main>
         <div className={`${styles.container} ${styles.helloContainer} ${seasonalStyle.background}`}>
+          <Image
+            className={styles.backgroundImage}
+            src={seasonalStyle.background}
+            alt=''
+            layout='fill'
+            objectFit='cover'
+            objectPosition='center'
+            draggable='false'
+          />
           <div className={styles.helloDiv}>
             <h1 className={`${styles.title} ${seasonalStyle.textColor}`}>
               My name is Camden.
