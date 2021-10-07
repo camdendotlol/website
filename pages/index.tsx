@@ -48,7 +48,7 @@ export const Home: React.FC<Props> = ({ portfolioData, postsData }) => {
       `}</style>
       <Head>
         <title>Camden Mecklem</title>
-        <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+        <link rel="shortcut icon" type="image/png" href={seasonalStyle.favicon} />
         <meta name="description" content="Camden Mecklem is a web developer in the Cincinnati area." />
 
         <meta property="og:title" content="Camden Mecklem" />

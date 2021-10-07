@@ -1,10 +1,11 @@
 import styles from '../styles/Home.module.css'
 
 export interface SeasonalTheme {
-  background: string,
-  credit: string,
-  textColor: string,
-  backgroundColor: string
+  background: string, // path to background image
+  credit: string, // HTML div that goes in the footer to credit the photographer
+  textColor: string, // CSS class with the text-color attribute
+  backgroundColor: string, // CSS class with the background-color attribute
+  favicon: string // path to favicon
 }
 
 const getSeasonalTheme = (): SeasonalTheme => {
@@ -42,7 +43,8 @@ const getSeasonalTheme = (): SeasonalTheme => {
           </p>`
         ,
         textColor: styles.springText,
-        backgroundColor: styles.springBackground
+        backgroundColor: styles.springBackground,
+        favicon: '/favicon-spring.png'
       }
     case 2:
       return {
@@ -53,7 +55,8 @@ const getSeasonalTheme = (): SeasonalTheme => {
           </p>`
         ,
         textColor: styles.summerText,
-        backgroundColor: styles.summerBackground
+        backgroundColor: styles.summerBackground,
+        favicon: '/favicon-summer.png'
       }
     case 3:
       return {
@@ -64,7 +67,8 @@ const getSeasonalTheme = (): SeasonalTheme => {
           </p>`
         ,
         textColor: styles.fallText,
-        backgroundColor: styles.fallBackground
+        backgroundColor: styles.fallBackground,
+        favicon: '/favicon-autumn.png'
       }
     default:
       return {
@@ -75,7 +79,8 @@ const getSeasonalTheme = (): SeasonalTheme => {
           </p>`
         ,
         textColor: styles.winterText,
-        backgroundColor: styles.winterBackground
+        backgroundColor: styles.winterBackground,
+        favicon: '/favicon-winter.png'
       }
   }
 }

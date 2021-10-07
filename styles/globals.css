@@ -5,8 +5,8 @@ body {
   /* might refactor these to the globals file at some point */
   --fallColor: #ff5429;
   --winterColor: #59dbca;
-  --springColor: #df89e7;
-  --summerColor: #ecd137;
+  --springColor: #f74d79;
+  --summerColor: #fbb72b;
 }
 
 html, 
