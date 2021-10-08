@@ -17,11 +17,10 @@ When you load the homepage, this website runs a function called `getSeasonalThem
 ```ts
 {
   background: '/img/ruby-doan-BrFuaOEfxCk-unsplash.jpg',
-  credit:
-    `<p>
-      cover photo from <a href = "https://unsplash.com/photos/BrFuaOEfxCk">Ruby Doan on Unsplash</a>
-    </p>`
-  ,
+  credit: {
+    photographer: 'Ruby Doan',
+    link: 'https://unsplash.com/photos/BrFuaOEfxCk'
+  },
   textColor: styles.springText,
   backgroundColor: styles.springBackground,
   favicon: '/favicon-spring.png'
@@ -44,12 +43,10 @@ Here is an example of how I use the `seasonalStyle` object in the homepage's bac
 />
 ```
 
-All the images are taken from Unplash, which has practically no restrictions and does not even require you to credit the photographer. But it's the nice thing to do. So I do this a bit lazily, by including a string in `seasonalStyle.credit` that can be turned into HTML.
+All the images are taken from Unplash, which has practically no restrictions and does not even require you to credit the photographer. But it's the nice thing to do. So I do this by including an object - `seasonalStyle.credit` - with the photographer's name and a link to the image on Unsplash.
 
 ```jsx
-<div dangerouslySetInnerHTML={{ __html: seasonalStyle.credit }}></div>
+<p>cover photo from <a href={seasonalStyle.credit.link}>{seasonalStyle.credit.photographer} on Unsplash</a></p>
 ```
-
-`dangerouslySetInnerHTML` is, as the name implies, rather dangerous, because it renders whatever is in the string as an HTML node, which has limitless potential for maliciousness. But in this case it's okay because it's only setting hardcoded values, not accepting user input or relying on a third party.
 
 Some components, like the blog you're looking at now, are not updated yet to support the new colors. As of this writing, links will change to the fall color when you hover over them. This will not change automatically when winter comes. I haven't figured out a good way to do this within NextJS's CSS module system. Most likely, I will someday refactor all the styles to use `styled-components` and then use the theme system built into that.

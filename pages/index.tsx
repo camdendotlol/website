@@ -134,10 +134,8 @@ export const Home: React.FC<Props> = ({ portfolioData, postsData }) => {
         </div>
       </main>
       <footer className={styles.footer}>
-        <div dangerouslySetInnerHTML={{ __html: seasonalStyle.credit }}></div>
-        <p>
-          𒁲𒈠𒃶𒈨𒂗
-        </p>
+        <p>cover photo from <a href={seasonalStyle.credit.link}>{seasonalStyle.credit.photographer} on Unsplash</a></p>
+        <p>𒁲𒈠𒃶𒈨𒂗</p>
       </footer>
     </div>
   )

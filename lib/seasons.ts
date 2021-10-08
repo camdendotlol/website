@@ -2,7 +2,10 @@ import styles from '../styles/Home.module.css'
 
 export interface SeasonalTheme {
   background: string, // path to background image
-  credit: string, // HTML div that goes in the footer to credit the photographer
+  credit: {
+    photographer: string, // name of the photographer
+    link: string // link to the pic on unsplash
+  },
   textColor: string, // CSS class with the text-color attribute
   backgroundColor: string, // CSS class with the background-color attribute
   favicon: string // path to favicon
@@ -37,11 +40,10 @@ const getSeasonalTheme = (): SeasonalTheme => {
     case 1:
       return {
         background: '/img/ruby-doan-BrFuaOEfxCk-unsplash.jpg',
-        credit:
-          `<p>
-            cover photo from <a href = "https://unsplash.com/photos/BrFuaOEfxCk">Ruby Doan on Unsplash</a>
-          </p>`
-        ,
+        credit: {
+          photographer: 'Ruby Doan',
+          link: 'https://unsplash.com/photos/BrFuaOEfxCk'
+        },
         textColor: styles.springText,
         backgroundColor: styles.springBackground,
         favicon: '/favicon-spring.png'
@@ -49,11 +51,10 @@ const getSeasonalTheme = (): SeasonalTheme => {
     case 2:
       return {
         background: '/img/jared-verdi-PNKwdJ8WetM-unsplash.jpg',
-        credit:
-          `<p>
-            cover photo from <a href = "https://unsplash.com/photos/PNKwdJ8WetM">Jared Verdi on Unsplash</a>
-          </p>`
-        ,
+        credit: {
+          photographer: 'Jared Verdi',
+          link: 'https://unsplash.com/photos/PNKwdJ8WetM'
+        },
         textColor: styles.summerText,
         backgroundColor: styles.summerBackground,
         favicon: '/favicon-summer.png'
@@ -61,11 +62,10 @@ const getSeasonalTheme = (): SeasonalTheme => {
     case 3:
       return {
         background: '/img/eberhard-grossgasteiger-KX6ECaHP6wQ-unsplash.jpg',
-        credit:
-          `<p>
-            cover photo from <a href="https://unsplash.com/photos/KX6ECaHP6wQ">eberhard 🖐 grossgasteiger on Unsplash</a>
-          </p>`
-        ,
+        credit: {
+          photographer: 'eberhard 🖐 grossgasteiger',
+          link: 'https://unsplash.com/photos/KX6ECaHP6wQ'
+        },
         textColor: styles.fallText,
         backgroundColor: styles.fallBackground,
         favicon: '/favicon-autumn.png'
@@ -73,11 +73,10 @@ const getSeasonalTheme = (): SeasonalTheme => {
     default:
       return {
         background: '/img/atle-mo-X9QnU-h3X_8-unsplash.jpg',
-        credit:
-          `<p>
-            cover photo from <a href = "https://unsplash.com/photos/X9QnU-h3X_8">Atle Mo on Unsplash</a>
-          </p>`
-        ,
+        credit: {
+          photographer: 'Atle Mo',
+          link: 'https://unsplash.com/photos/X9QnU-h3X_8'
+        },
         textColor: styles.winterText,
         backgroundColor: styles.winterBackground,
         favicon: '/favicon-winter.png'
