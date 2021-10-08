@@ -65,7 +65,7 @@ export const Home: React.FC<Props> = ({ portfolioData, postsData }) => {
         <meta name="twitter:description" content="Camden Mecklem is a web developer in the Cincinnati area." />
       </Head>
       <main>
-        <div className={`${styles.container} ${styles.helloContainer} ${seasonalStyle.background}`}>
+        <div className={`${styles.container} ${styles.helloContainer}`}>
           <Image
             className={styles.backgroundImage}
             src={seasonalStyle.background}

@@ -16,23 +16,33 @@ When you load the homepage, this website runs a function called `getSeasonalThem
 
 ```ts
 {
-  background: styles.springBackgroundContainer,
+  background: '/img/ruby-doan-BrFuaOEfxCk-unsplash.jpg',
   credit:
     `<p>
-      cover photo from <a href = "https://unsplash.com/photos/BrFuaOEfxCk">Ruby Doan on Unsplash</ a >
-    </p>`,
+      cover photo from <a href = "https://unsplash.com/photos/BrFuaOEfxCk">Ruby Doan on Unsplash</a>
+    </p>`
+  ,
   textColor: styles.springText,
-  backgroundColor: styles.springBackground
+  backgroundColor: styles.springBackground,
+  favicon: '/favicon-spring.png'
 }
 ```
 
-`styles` is imported from the `Home` CSS module (not ideal, because I also use these in the `Portfolio` component, but it works for now). I use these styles like so:
+`styles` is imported from the `Home` CSS module (not ideal, because I also use these in the `Portfolio` component, but it works for now).
 
-```ts
-className={`${styles.container} ${styles.helloContainer} ${seasonalStyle.background}`}
+Here is an example of how I use the `seasonalStyle` object in the homepage's background image (behind the "My name is Camden" header). Normally this would be a `background-image` CSS property, but then I wouldn't be making use of NextJS's `Image` component, which automatically serves lower-bandwidth formats to browsers that support it. So I use an `Image` and add some CSS properties in the `backgroundImage` class to put it in the background.
+
+```tsx
+<Image
+  src={seasonalStyle.background}
+  className={styles.backgroundImage}
+  alt='' // empty alt-text because the image is decorational background
+  layout='fill'
+  objectFit='cover'
+  objectPosition='center'
+  draggable='false'
+/>
 ```
-
-It's pretty ugly, but this is how you add multiple classes to an element using NextJS's module system. I'm not very happy with this system at all, but I make it work because refactoring to `styled-components` would take longer than I care to spend on this site.
 
 All the images are taken from Unplash, which has practically no restrictions and does not even require you to credit the photographer. But it's the nice thing to do. So I do this a bit lazily, by including a string in `seasonalStyle.credit` that can be turned into HTML.
 
