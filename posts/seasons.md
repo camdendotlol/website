@@ -43,9 +43,9 @@ Here is an example of how I use the `seasonalStyle` object in the homepage's bac
 />
 ```
 
-All the images are taken from Unplash, which has practically no restrictions and does not even require you to credit the photographer. But it's the nice thing to do. So I do this by including an object - `seasonalStyle.credit` - with the photographer's name and a link to the image on Unsplash.
+All the images are taken from Unsplash, which has practically no restrictions and does not even require you to credit the photographer. But it's the nice thing to do. So I do this by including an object - `seasonalStyle.credit` - with the photographer's name and a link to the image on Unsplash.
 
-```jsx
+```tsx
 <p>cover photo from <a href={seasonalStyle.credit.link}>{seasonalStyle.credit.photographer} on Unsplash</a></p>
 ```
 
