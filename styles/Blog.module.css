@@ -94,6 +94,13 @@
   overflow: auto;
 }
 
+.blogPostContent p img {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  border-radius: 10px;
+}
+
 .subtitle {
   font-size: 3em;
   font-family: sans-serif;

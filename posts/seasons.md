@@ -50,3 +50,9 @@ All the images are taken from Unsplash, which has practically no restrictions an
 ```
 
 Some components, like the blog you're looking at now, are not updated yet to support the new colors. As of this writing, links will change to the fall color when you hover over them. This will not change automatically when winter comes. I haven't figured out a good way to do this within NextJS's CSS module system. Most likely, I will someday refactor all the styles to use `styled-components` and then use the theme system built into that.
+
+### Postscript:
+
+I also took this opportunity to optimize my Lighthouse score. Almost there!
+
+![lighthouse score](/img/lighthouse_score.png)
