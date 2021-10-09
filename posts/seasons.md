@@ -55,4 +55,4 @@ Some components, like the blog you're looking at now, are not updated yet to sup
 
 I also took this opportunity to optimize my Lighthouse score. Almost there!
 
-![lighthouse score](/img/lighthouse_score.png)
+![Google Lighthouse score screen showing Performance at 99, followed by Accessibility, Best Practices, and SEO each at 100.](/img/lighthouse_score.png)
