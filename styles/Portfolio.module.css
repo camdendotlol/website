@@ -11,7 +11,7 @@
   overflow-x: hidden;
 }
 
-.portfolio a:hover {
+.portfolio a:hover, .portfolio a:focus {
   color: #e9e9e9;
 }
 

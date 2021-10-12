@@ -10,18 +10,6 @@
   color: #f6f6f6;
 }
 
-/* .helloContainer::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000000;
-  background-repeat: no-repeat;
-  background-size: cover;
-  filter: brightness(60%);
-} */
-
 .backgroundImage {
   filter: brightness(60%);
   z-index: 0;
