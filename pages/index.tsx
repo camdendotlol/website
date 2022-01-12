@@ -96,13 +96,6 @@ export const Home: React.FC<Props> = ({ portfolioData, postsData }) => {
                   <span>Blog</span>
                 </button>
               </li>
-              <li
-                onClick={() => window.location.href='/resume.pdf'}
-                >
-                <button className={seasonalStyle.backgroundColor}>
-                  <span>Resume</span>
-                </button>
-              </li>
             </ul>
           </div>
         </div>
