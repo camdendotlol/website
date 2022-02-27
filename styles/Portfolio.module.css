@@ -163,6 +163,7 @@
   gap: 5px;
   display: flex;
   flex-wrap: wrap;
+  color: black;
   justify-content: center;
   align-content: center;
   align-items: center;
