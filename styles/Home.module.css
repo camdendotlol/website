@@ -47,6 +47,14 @@
   background: var(--summerColor)
 }
 
+.ukraineText {
+  color: var(--ukraineBlue)
+}
+
+.ukraineBackground {
+  background: var(--ukraineColor)
+}
+
 .helloDiv {
   position: relative;
   display: flex;

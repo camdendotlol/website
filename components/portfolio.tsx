@@ -61,6 +61,14 @@ const Portfolio: React.FC<Props> = ({ portfolioData, seasonalTheme }) => {
     return styleString
   }
 
+  const getAlternatedBackground = (index: number) => {
+    if (index % 2 === 0) {
+      return 'rgb(38, 90, 181)'
+    } else {
+      return 'rgb(248, 215, 72)'
+    }
+  }
+
   return (
     <section
       className={styles.portfolio}
@@ -80,7 +88,8 @@ const Portfolio: React.FC<Props> = ({ portfolioData, seasonalTheme }) => {
         return (
           <div
             key={index}
-            className={`${getCardClass(index)} ${seasonalTheme.backgroundColor}`}
+            className={getCardClass(index)}
+            style={{ backgroundColor: getAlternatedBackground(index) }}
           >
             <h1 className={styles.itemHeader}>{item.title}</h1>
             <div className={styles.portfolioFlex}>
