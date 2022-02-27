@@ -117,7 +117,7 @@
 }
 
 .homepageLink a:hover {
-  color: #ff7f50;
+  color: var(--ukraineBlue);
 }
 
 .plugLink {
@@ -126,7 +126,7 @@
 }
 
 .plugLink:hover {
-  color: #ff7f50;
+  color: var(--ukraineBlue);
 }
 
 .backtoBlog {
@@ -141,7 +141,7 @@
 }
 
 .backtoBlog a:hover {
-  color: #ff7f50;
+  color: var(--ukraineBlue);
 }
 
 @media screen and (max-width: 1400px) {

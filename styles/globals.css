@@ -26,7 +26,7 @@ a {
 }
 
 a:hover, a:focus {
-  color: #ff7f50;
+  color: var(--ukraineBlue);
 }
 
 * {
