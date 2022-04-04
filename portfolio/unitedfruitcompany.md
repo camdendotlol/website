@@ -2,7 +2,7 @@
 title: 'United Fruit Company'
 image: '/img/ufc.jpg'
 technologies: ['Next.js', 'React Spring', 'Wordpress']
-url: 'https://unitedfruitcompany.com'
+url: 'https://www.unitedfruitcompany.com'
 date: '2021-12-31'
 github: 'https://github.com/BudgetMC/unitedfruitcompany'
 ---
