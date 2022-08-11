@@ -2,7 +2,7 @@
 title: 'Chromapoll'
 image: '/img/chromapoll.png'
 technologies: ['React', 'Node', 'Express', 'WebSocket', 'styled-components', 'Redux']
-url: 'https://chromapoll.xyz/'
+url: 'https://github.com/mythmakerseven/chromapoll'
 date: '2021-09-01'
 github: 'https://github.com/mythmakerseven/chromapoll'
 ---
