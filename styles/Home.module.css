@@ -24,35 +24,27 @@
 }
 
 .winterText {
-  color: var(--winterColor)
+  color: var(--winterColor);
 }
 
 .winterBackground {
-  background: var(--winterColor)
+  background: var(--winterColor);
 }
 
 .springText {
-  color: var(--springColor)
+  color: var(--springColor);
 }
 
 .springBackground {
-  background: var(--springColor)
+  background: var(--springColor);
 }
 
 .summerText {
-  color: var(--summerColor)
+  color: var(--summerColor);
 }
 
 .summerBackground {
-  background: var(--summerColor)
-}
-
-.ukraineText {
-  color: var(--ukraineBlue)
-}
-
-.ukraineBackground {
-  background: var(--ukraineColor)
+  background: var(--summerColor);
 }
 
 .helloDiv {

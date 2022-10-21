@@ -2,16 +2,13 @@
 
 body {
   /* init seasonal variables */
-  /* might refactor these to the globals file at some point */
   --fallColor: #ff5429;
   --winterColor: #59dbca;
   --springColor: #f74d79;
   --summerColor: #fbb72b;
-  --ukraineBlue: rgb(38, 90, 181);
-  --ukraineColor: rgb(248, 215, 72);
 }
 
-html, 
+html,
 body {
   padding: 0;
   margin: 0;
@@ -26,7 +23,7 @@ a {
 }
 
 a:hover, a:focus {
-  color: var(--ukraineBlue);
+  color: var(--fallColor);
 }
 
 * {

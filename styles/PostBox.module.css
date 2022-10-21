@@ -36,7 +36,7 @@
 }
 
 .largePostbox:hover .postboxContent, .largePostbox:focus .postboxContent, .smallPostbox:hover .postboxContent, .smallPostbox:focus .postboxContent {
-  color: var(--ukraineColor);
+  color: var(--fallColor);
 }
 
 .backgroundImage {

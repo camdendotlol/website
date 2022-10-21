@@ -109,7 +109,6 @@ export const Home: React.FC<Props> = ({ portfolioData, postsData }) => {
           <h1 className={styles.title}>
             I also write a blog.
           </h1>
-          {/* <img id={styles.blogImg} src="/img/alexandria.jpg" alt="" /> */}
           <div className={styles.postList}>
             <h1 className={styles.subtitle}>
               Here are some recent posts:

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import styles from '../styles/Portfolio.module.css'
 import { PortfolioData } from '../pages/index'
@@ -61,21 +61,6 @@ const Portfolio: React.FC<Props> = ({ portfolioData, seasonalTheme }) => {
     return styleString
   }
 
-  const getAlternatedStyles = (index: number) => {
-    if (index % 2 === 0) {
-      return {
-        backgroundColor: 'rgb(38, 90, 181)',
-        color: '#f6f6f6'
-      }
-    } else {
-      return {
-        backgroundColor: 'rgb(248, 215, 72)',
-        color: 'black'
-      }
-    }
-  }
-  
-
   return (
     <section
       className={styles.portfolio}
@@ -95,8 +80,7 @@ const Portfolio: React.FC<Props> = ({ portfolioData, seasonalTheme }) => {
         return (
           <div
             key={index}
-            className={getCardClass(index)}
-            style={getAlternatedStyles(index)}
+            className={`${getCardClass(index)} ${seasonalTheme.backgroundColor}`}
           >
             <h1 className={styles.itemHeader}>{item.title}</h1>
             <div className={styles.portfolioFlex}>
