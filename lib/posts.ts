@@ -43,11 +43,16 @@ export const getSortedPostsData = () => {
       imageURL: matterResult.data.imageURL,
       imageWidth: dimensions.width,
       imageHeight: dimensions.height,
-      quoteAuthor: matterResult.data.quoteAuthor
+      quoteAuthor: matterResult.data.quoteAuthor,
+      draft: matterResult.data?.draft || null
     }
   })
+
+  // Filter out drafts
+  const filtered = postsData.filter((post) => !post.draft)
+
   // Sort posts by date
-  return postsData.sort((a, b) => {
+  return filtered.sort((a, b) => {
     if (a.date < b.date) {
       return 1
     } else {

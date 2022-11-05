@@ -41,19 +41,19 @@ const Post: React.FC<Props> = ({ postData }) => {
         <link rel="shortcut icon" type="image/png" href="/favicon.png" />
         <meta property="og:title" content={`${postData.title} - Camden's Blog`} />
         <meta property="og:description" content={getMetadataSnippet(postData.plainText)} />
-        <meta property="og:url" content={`https://camdenmecklem.com/blog/${postData.path}/`} />
+        <meta property="og:url" content={`https://camden.lol/${postData.path}/`} />
         <meta property="og:image" content={postData.imageURL} />
         <meta property="og:site_name" content="Camden's Blog" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="camdenmecklem.com" />
-        <meta property="twitter:url" content={`https://camdenmecklem.com/blog/${postData.path}/`} />
+        <meta property="twitter:url" content={`https://camden.lot/${postData.path}/`} />
         <meta name="twitter:title" content={`${postData.title} - Camden's Blog`} />
         <meta name="twitter:description" content={getMetadataSnippet(postData.plainText)} />
         <meta name="twitter:image" content={postData.imageURL} />
       </Head>
       <div className={styles.container}>
-        <p className={styles.blogHeader}><Link href="/blog/"><a>Camden&apos;s Blog</a></Link></p>
+        <p className={styles.blogHeader}><Link href="/"><a>Camden&apos;s Blog</a></Link></p>
         <h1 className={styles.title}>{postData.title}</h1>
         <p className={styles.date}>&#8213; <Date dateString={postData.date} /> &#8213;</p>
         <div className={styles.postHeaderImg}>
