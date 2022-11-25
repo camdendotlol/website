@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Date from '../components/date'
 import styles from '../styles/PostBox.module.css'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 export enum boxSize {
   small,
@@ -21,7 +21,7 @@ interface Props {
 
 const PostBox: React.FC<Props> = ({ postData, size }) => {
   return (
-    <Link key={postData.id} href={`/blog/${postData.id}`}>
+    <Link legacyBehavior key={postData.id} href={`/blog/${postData.id}`}>
       <a className={styles.blogLink} tabIndex={-1}>
         <div className={size === boxSize.large ? `postbox ${styles.largePostbox}` : `postbox ${styles.smallPostbox}`} tabIndex={0}>
           <Image

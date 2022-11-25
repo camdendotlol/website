@@ -1,7 +1,7 @@
 import Date from '../../components/date'
 import Link from 'next/link'
 import Head from 'next/head'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { ParsedUrlQuery } from 'querystring'
@@ -37,8 +37,8 @@ const Post: React.FC<Props> = ({ postData }) => {
   return (
     <>
       <Head>
-        <title>{postData.title} - Camden&apos;s Blog</title>
-        <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+        <title>{`${postData.title} - Camden&apos;s Blog`}</title>
+        <link rel="shortcut icon" type="image/png" href="/favicon-autumn.png" />
         <meta property="og:title" content={`${postData.title} - Camden's Blog`} />
         <meta property="og:description" content={getMetadataSnippet(postData.plainText)} />
         <meta property="og:url" content={`https://camden.lol/${postData.path}/`} />
@@ -53,11 +53,11 @@ const Post: React.FC<Props> = ({ postData }) => {
         <meta name="twitter:image" content={postData.imageURL} />
       </Head>
       <div className={styles.container}>
-        <p className={styles.blogHeader}><Link href="/"><a>Camden&apos;s Blog</a></Link></p>
+        <p className={styles.blogHeader}><Link href="/">Camden&apos;s Blog</Link></p>
         <h1 className={styles.title}>{postData.title}</h1>
         <p className={styles.date}>&#8213; <Date dateString={postData.date} /> &#8213;</p>
         <div className={styles.postHeaderImg}>
-          <Image width={postData.imageWidth} height={postData.imageHeight} className={styles.postHeaderImg} src={postData.imageURL} alt='' />
+          <Image  width={postData.imageWidth} height={postData.imageHeight} className={styles.postHeaderImg} src={postData.imageURL} alt='' />
         </div>
         <div className={styles.quoteBox}>
           <p className={styles.quoteText}>{postData.quote}</p>
@@ -69,7 +69,7 @@ const Post: React.FC<Props> = ({ postData }) => {
         <p className={styles.blogPostContent}>If you liked this post, you can help me make more of them by <a href="https://www.amazon.com/hz/wishlist/ls/1G2J9M8GI8CN2" className={styles.plugLink}>buying me stuff on Amazon</a>.</p>
         <p>&#167;</p>
         <div className={styles.backtoBlog}>
-          <Link href='/blog/'><a>&#8592; Back to the blog</a></Link>
+          <Link href='/blog/'>&#8592; Back to the blog</Link>
         </div>
         <style jsx global>{`
           body {

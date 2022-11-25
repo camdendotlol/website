@@ -19,7 +19,7 @@ export const Home: React.FC<Props> = ({ postsData }) => (
   <div>
     <Head>
       <title>Camden&apos;s Blog</title>
-      <link rel="shortcut icon" type="image/png" href={'/favicon_autumn.png'} />
+      <link rel="shortcut icon" type="image/png" href='/favicon-autumn.png' />
       <meta name="description" content="Camden Mecklem is a web developer in the Cincinnati area." />
 
       <meta property="og:title" content="Camden's Blog" />
