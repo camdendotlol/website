@@ -1,7 +1,5 @@
-# Website: Now with 500% more hype!
+# Camden's Blog
 
-Available at [https://camdenmecklem.com](https://camdenmecklem.com)
+Available at [https://camden.lol](https://camden.lol)
 
-## Developer reflection
-
-If you're looking for the type of reflection I do for my other projects, my first blog post should fill that role: [https://camdenmecklem.com/blog/hello](https://camdenmecklem.com/blog/hello)
+This was originally a more complex site, which is why it's Next.js with tons of dependencies. I'm slowly working on paring it down to a simpler structure without having to do a total rewrite. Eventually it will be static HTML generated with some sort of SSG.
