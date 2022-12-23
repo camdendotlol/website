@@ -56,6 +56,9 @@ export const Home: React.FC<Props> = ({ postsData }) => (
       `}</style>
       </div>
     </main>
+    <div className={styles.mastodonLink}>
+      <a rel="me" href="https://mas.to/@camden">Mastodon</a>
+    </div>
   </div>
 )
 
