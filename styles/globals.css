@@ -30,7 +30,3 @@ a:hover, a:focus {
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
 }
-
-.mastodonLink {
-  display: none;
-}
