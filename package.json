@@ -9,7 +9,7 @@
     "export": "next export"
   },
   "dependencies": {
-    "date-fns": "^2.29.1",
+    "date-fns": "^2.29.3",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.7.0",
     "image-size": "^1.0.2",
